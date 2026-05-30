@@ -150,22 +150,26 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:30 AM** — Check out hotel → Santa Fe Depot
 - **12:01 PM** — Surfliner 777 northbound · Business class, ocean-side right
 - **3:00 PM** — Arrive LA Union Station · Uber to The Georgian, Santa Monica
-- **4:00 PM** — Check in · drop bags · rest / freshen up
-- **6:00 PM** — Uber to Griffith Observatory *(~45–60 min on a Sunday)*
-- **8:00 PM** — Sunset at Griffith (sunset 8:08 PM)
-- **9:30 PM** — Dinner east *(Los Feliz / Silver Lake), then back to the Georgian*
+- **4:00 PM** — Check in · drop bags · freshen up *(bags to the hotel — the Bowl bans large bags)*
+- **4:45 PM** — Uber east to Hollywood *(~40 min, lighter on a Sunday)*
+- **5:30 PM** — Early dinner near the Bowl *(Hollywood / Franklin Village)*
+- **7:00 PM** — **Reggae Night XXIV**, Hollywood Bowl — Ziggy Marley + Burning Spear *(gates 5:30 PM; ~to 8:45 PM)*
+- **9:00 PM** — Griffith Observatory — night **city-lights** view *(~10–15 min from the Bowl; open Sun till 10 PM)*
+- **10:00 PM** — Back to the Georgian
 
-*Santa Monica beach/bluffs moved to 6/22 morning, so 6/21 is a single evening run to Griffith.*
+*Reggae Night and Griffith are ~10 min apart in the same hills, so the evening runs dinner → concert → Griffith. You trade the sunset for the night skyline (you're at the Bowl at 8:08 PM). Santa Monica bluffs are on 6/22 morning.*
 
 ### Mon · 6/22
 
 - **Morning** — Check out Georgian, luggage in car all day
 - **Morning** — Santa Monica Beach / Palisades Park bluffs *(right by the hotel)*
-- **Late morning** — Abbot Kinney / Venice *(right next to Santa Monica)* — optional late brunch at Felix Trattoria *(Resy rolling window — see "Suggestions")*
-- **Midday** — Beverly Hills
-- `?` — open afternoon / relax
-- **5:00 PM** — K-town dinner · Park's BBQ
+- **Late morning** — Abbot Kinney / Venice *(right next to Santa Monica)* — optional brunch at Felix Trattoria *(Resy rolling window — see "Suggestions")*
+- **2:30 PM** — Eames House / Case Study House #8 tour · Pacific Palisades *(~15 min north of Santa Monica; reservation required)*
+- **3:30 PM** — Beverly Hills *(brief, en route east)*
+- **5:30 PM** — K-town dinner · Park's BBQ
 - **9:30 PM** — Depart for airport *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car.)*
+
+*Eames House sits in Pacific Palisades (west), so it's done before the inland run to Beverly Hills and K-town — a clean west→east finish. The 2:30 PM Monday slot is the only time it's open during the LA stay; book ahead.*
 
 ### Tue · 6/23 — *LA → Taipei*
 
@@ -193,7 +197,9 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **6/22 reorder (geographic):** Venice / Abbot Kinney first thing (next to Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
 - **6/12 Scout Seats:** White Sox VIP — depart 5:00 PM to arrive ~5:30 for the all-inclusive Scout Seats perks before first pitch.
 - **6/16–6/17 split:** combined the two downtown dives into one — 6/16 "downtown day" (9/11 + SoHo + Via Carota), 6/17 "north day" (MoMA + SUMMIT); MoMA and SoHo swapped days.
-- **6/21–6/22:** moved Santa Monica beach/bluffs to 6/22 morning (paired with Venice) so 6/21 is a single evening run to Griffith.
+- **6/21 Reggae Night added:** Hollywood Bowl Reggae Night XXIV (Ziggy Marley + Burning Spear, 7 PM) added to the 6/21 evening. Sequenced early dinner → concert → Griffith — the Bowl and Griffith are ~10 min apart in the same hills, so Griffith stays (night city-lights view instead of the 8:08 PM sunset, since you're at the Bowl for it).
+- **6/22 Eames House added:** Eames House / Case Study House #8 tour at 2:30 PM (the only day/time it's open during the stay — Mondays). Slotted after Venice and before Beverly Hills since it's in Pacific Palisades (west), keeping a clean west→east run. Park's BBQ nudged to 5:30 PM to absorb it.
+- **6/21–6/22:** moved Santa Monica beach/bluffs to 6/22 morning (paired with Venice) so 6/21 frees up for the evening Hollywood run.
 - **6/17 routing:** confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.
 - **6/13 Au Cheval:** pulled to 11:00 AM (open time, queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.
 - **6/11 360 Chicago:** moved 8 PM → 7:00 PM to catch pre-sunset bright + sunset + blue hour per cousin's tip.
@@ -215,7 +221,8 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **6/16 9/11 Museum timing:** 2:30 PM entry with ~2 hrs inside puts you out by 4:30, then UES/Midtown → West Village for Via Carota at 5:30 is fine.
 - **Via Carota** runs walk-in-heavy; confirm reservations before counting on the slot.
 - **6/20 same-day flow** (NASCAR 2 PM → hotel switch 5 PM → KSON 7 PM): comfortable — watch NASCAR ~2 hrs, back by ~4:30, switch to the Andaz by 5 with time to rest or eat, then KSON at 7 is a 10-min walk away (no need to arrive on the dot).
-- **6/21 sequence:** Uber to Griffith from Santa Monica is 45–60 min Sunday afternoon. 6:30 PM departure puts you there ~7:30, in line for parking lot/security ~7:45, on the lawn for sunset 8:08 PM — workable but no slack.
+- **6/21 sequence:** after dropping bags at the Georgian (~4:00 PM), it's a west→east swing to Hollywood for the 5:30 PM dinner / 7 PM Bowl — unavoidable since the hotel is in Santa Monica. Reggae Night runs ~7:00–8:45 PM; Griffith (open Sun till 10 PM) is ~10–15 min away, so aim to be on the lawn there by ~9:00 PM for the city lights.
+- **6/22 Eames timing:** the 2:30 PM tour is reservation-only and sells out; June dates released the first week of May. The Venice (south) → Eames (north) leg is a ~20-min backtrack up the coast — the only seam in an otherwise west→east day.
 
 ---
 
@@ -233,6 +240,8 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] Andaz San Diego · 6/20 (1 night)
 - [ ] KSON Countryfest tickets · 6/20 7 PM — committed, awaiting tickets
 - [ ] NASCAR tickets · 6/20 — committed, awaiting tickets (confirm session time)
+- [ ] Reggae Night XXIV tickets · Hollywood Bowl · 6/21 7 PM
+- [ ] Eames House tour reservation · 6/22 2:30 PM (sells out — ~$30pp)
 
 **Tier 2 — within 1–2 weeks:**
 - [ ] Architecture boat tour · 6/11 10 AM
@@ -244,7 +253,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] Via Carota · 6/16 5:30 PM
 - [ ] Art Smart tour with Christian · 6/18 11 AM
 - [ ] Another Side of San Diego · 6/19 9 AM
-- [ ] Park's BBQ · 6/22 5 PM
+- [ ] Park's BBQ · 6/22 5:30 PM
 
 **Day-of decisions:**
 - [ ] Blue whale watching 6/19 PM — add back or skip
