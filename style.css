@@ -159,7 +159,7 @@ body {
 .sidebar-note {
   margin: 3.5rem 0 0;
   padding: 2rem 2.2rem;
-  background: rgba(255, 252, 244, 0.5);
+  background: rgba(255, 252, 244, 0.38);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--moss);
   border-radius: 2px;
@@ -219,6 +219,27 @@ a.venue strong { color: inherit; }
     linear-gradient(180deg, rgba(239, 231, 215, 0) 70%, var(--paper) 100%),
     radial-gradient(700px 500px at 70% 30%, rgba(179, 90, 58, 0.10), transparent 70%);
 }
+
+/* Constellation route — a faint ink-on-paper ambiance drawn by hero-bg.js
+   (Three.js). It's a page-level fixed layer that sits UNDER all content
+   (z-index:0; the hero, main and footer are z-index:2, the grain z-index:1), so
+   the warm motes and the 4-city flight-map line live behind the text and the
+   photos and never obstruct reading. It reads through the transparent sections
+   and the translucent cards; multiply keeps it as ink pressed into the paper.
+   Pointer-transparent and progressive: if WebGL or the module fails to load,
+   the page simply stands on its own. */
+.hero-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+.hero-bg.is-ready { opacity: 0.72; }
 
 .topnav {
   display: flex;
@@ -438,7 +459,7 @@ main { position: relative; z-index: 2; }
   margin-bottom: 4rem;
 }
 .card {
-  background: rgba(255, 252, 244, 0.5);
+  background: rgba(255, 252, 244, 0.38);
   border: 1px solid var(--rule);
   border-radius: 2px;
   padding: 2rem 1.8rem;
@@ -715,7 +736,7 @@ main { position: relative; z-index: 2; }
   margin: 1.5rem 0 0;
 }
 .checklist {
-  background: rgba(255, 252, 244, 0.4);
+  background: rgba(255, 252, 244, 0.32);
   border: 1px solid var(--rule);
   padding: 1.5rem 1.7rem;
   border-radius: 2px;
@@ -841,7 +862,7 @@ main { position: relative; z-index: 2; }
    Print
    ============================================================ */
 @media print {
-  .grain, .scroll-cue, .topnav { display: none; }
+  .grain, .scroll-cue, .topnav, .hero-bg { display: none; }
   body { background: #fff; color: #000; }
   .section { padding: 1rem 0; max-width: none; }
   .day { break-inside: avoid; }
