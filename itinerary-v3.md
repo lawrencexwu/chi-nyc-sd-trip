@@ -167,9 +167,10 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **2:30 PM** — Eames House / Case Study House #8 tour · Pacific Palisades *(~15 min north of Santa Monica; reservation required)*
 - **3:30 PM** — Beverly Hills *(brief, en route east)*
 - **5:30 PM** — K-town dinner · Park's BBQ
+- **7:15 PM** — Korean spa · Wi Spa, K-town *(hot/cold pools + sauna — board the redeye fresh; open 24h, ~5 min from Park's)*
 - **9:30 PM** — Depart for airport *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car.)*
 
-*Eames House sits in Pacific Palisades (west), so it's done before the inland run to Beverly Hills and K-town — a clean west→east finish. The 2:30 PM Monday slot is the only time it's open during the LA stay; book ahead.*
+*Eames House sits in Pacific Palisades (west), so it's done before the inland run to Beverly Hills and K-town — a clean west→east finish. The 2:30 PM Monday slot is the only time it's open during the LA stay; book ahead. The evening idle time is filled in K-town: dinner at Park's, then a Korean spa to relax and shower before the midnight redeye. Midday (after Venice/lunch) is left open/leisurely; the Getty Villa — open Mondays, free timed entry, ~5 min from Eames in Pacific Palisades — is an easy add there if you want it.*
 
 ### Tue · 6/23 — *LA → Taipei*
 
@@ -199,6 +200,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **6/16–6/17 split:** combined the two downtown dives into one — 6/16 "downtown day" (9/11 + SoHo + Via Carota), 6/17 "north day" (MoMA + SUMMIT); MoMA and SoHo swapped days.
 - **6/21 Reggae Night added:** Hollywood Bowl Reggae Night XXIV (Ziggy Marley + Burning Spear, 7 PM) added to the 6/21 evening. Sequenced early dinner → concert → Griffith — the Bowl and Griffith are ~10 min apart in the same hills, so Griffith stays (night city-lights view instead of the 8:08 PM sunset, since you're at the Bowl for it).
 - **6/22 Eames House added:** Eames House / Case Study House #8 tour at 2:30 PM (the only day/time it's open during the stay — Mondays). Slotted after Venice and before Beverly Hills since it's in Pacific Palisades (west), keeping a clean west→east run. Park's BBQ nudged to 5:30 PM to absorb it.
+- **6/22 evening filled:** the ~2.5-hour dead stretch between dinner and the airport is now a Korean spa (Wi Spa, K-town, ~5 min from Park's) — soak/shower before the midnight redeye. Midday (after Venice/lunch) left open/leisurely; Getty Villa noted as an easy optional add since it's open Mondays and ~5 min from Eames.
 - **6/21–6/22:** moved Santa Monica beach/bluffs to 6/22 morning (paired with Venice) so 6/21 frees up for the evening Hollywood run.
 - **6/17 routing:** confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.
 - **6/13 Au Cheval:** pulled to 11:00 AM (open time, queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.
