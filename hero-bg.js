@@ -213,17 +213,13 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     if (!running) renderStatic();
   }
 
-  // ---- scroll fade: route lives in the hero and fades out; motes ease to a
-  //      faint ambient level so they whisper on behind the rest of the page ----
+  // ---- presence: as a fixed overlay above the content, both the motes and the
+  //      route ride along at full strength over every section as you scroll.
+  //      (Kept as a hook so it's easy to reintroduce a scroll-based falloff.) ----
   let routeFade = 1, moteFade = 1;
-  function smooth(a, b, x) {
-    const t = Math.min(Math.max((x - a) / (b - a), 0), 1);
-    return t * t * (3 - 2 * t);
-  }
   function applyFade() {
-    const hp = Math.min((window.scrollY || window.pageYOffset || 0) / (heroH * 0.85), 1);
-    routeFade = 1 - smooth(0, 0.5, hp);   // the flight-map route is a hero accent
-    moteFade = 1 - 0.20 * smooth(0, 1, hp); // motes stay present site-wide (~0.80)
+    routeFade = 1;
+    moteFade = 1;
   }
 
   // ---- parallax (desktop pointer only; touch keeps the autonomous drift) ----

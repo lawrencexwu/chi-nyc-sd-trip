@@ -221,24 +221,22 @@ a.venue strong { color: inherit; }
 }
 
 /* Constellation route — a faint ink-on-paper ambiance drawn by hero-bg.js
-   (Three.js). It's a page-level fixed layer that sits with the film grain at
-   z-index:1, behind all content (which lives at z-index:2), so it shows softly
-   through the transparent sections and the 50%-translucent cards site-wide and
-   never touches readability. The flight-map route is anchored to the hero and
-   fades out as you scroll; the warm motes drift on, lightly, behind the rest.
-   Pointer-transparent and progressive: if WebGL or the module fails to load,
-   the page simply stands on its own. */
+   (Three.js). It's a page-level fixed overlay ABOVE the content (z-index:3) so
+   the warm motes and the 4-city flight-map line read evenly over every section,
+   not just the hero. It's pointer-transparent (clicks pass straight through)
+   and globally softened so it never competes with the text. Progressive: if
+   WebGL or the module fails to load, the page simply stands on its own. */
 .hero-bg {
   position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1.2s ease;
+  transition: opacity 1.6s ease;
 }
-.hero-bg.is-ready { opacity: 1; }
+.hero-bg.is-ready { opacity: 0.72; }
 
 .topnav {
   display: flex;
