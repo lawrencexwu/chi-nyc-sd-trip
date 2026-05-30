@@ -44,7 +44,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     clay:    new THREE.Color('#b35a3a'),
     clayDeep:new THREE.Color('#8c4329'),
   };
-  const moteColors = [COLORS.inkMute, COLORS.rule, COLORS.ochre, COLORS.clay];
+  const moteColors = [COLORS.inkMute, COLORS.ochre, COLORS.clay, COLORS.clayDeep];
 
   // ---- soft round point shader (per-point size / alpha / colour) ----
   const VERT = `
