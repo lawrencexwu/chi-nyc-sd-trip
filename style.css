@@ -220,6 +220,23 @@ a.venue strong { color: inherit; }
     radial-gradient(700px 500px at 70% 30%, rgba(179, 90, 58, 0.10), transparent 70%);
 }
 
+/* Constellation route — a faint ink-on-paper flight map behind the title.
+   Drawn by hero-bg.js (Three.js); pointer-transparent and progressive:
+   if WebGL or the module fails to load, the hero simply stands on its own. */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.hero-bg.is-ready { opacity: 1; }
+.hero-inner, .topnav { position: relative; z-index: 1; }
+.topnav { z-index: 5; }
+
 .topnav {
   display: flex;
   align-items: center;
@@ -841,7 +858,7 @@ main { position: relative; z-index: 2; }
    Print
    ============================================================ */
 @media print {
-  .grain, .scroll-cue, .topnav { display: none; }
+  .grain, .scroll-cue, .topnav, .hero-bg { display: none; }
   body { background: #fff; color: #000; }
   .section { padding: 1rem 0; max-width: none; }
   .day { break-inside: avoid; }
