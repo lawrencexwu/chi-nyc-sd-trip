@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerary — June 2026 · CHI → NYC → SD → LA → TPE</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --panel-2: #1d212b;
+    --line: #2a2f3a;
+    --text: #e7e9ee;
+    --muted: #9aa3b2;
+    --accent: #7aa2ff;
+    --accent-soft: #2a3a6b;
+    --open: #f0b429;
+    --action: #ff6b81;
+    --time: #b6c2da;
+    --chi: #ff8c42;
+    --nyc: #c792ea;
+    --sd: #34c3eb;
+    --la: #57d9a3;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Sticky nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(15,17,21,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; gap: 4px;
+    padding: 10px 16px;
+    justify-content: center;
+  }
+  nav a {
+    color: var(--muted);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px; font-weight: 600;
+    white-space: nowrap;
+  }
+  nav a:hover { background: var(--panel-2); color: var(--text); text-decoration: none; }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 18px 80px; }
+
+  header.hero {
+    text-align: center;
+    padding: 48px 18px 28px;
+    background: radial-gradient(900px 300px at 50% -40%, #25305a 0%, transparent 70%);
+  }
+  header.hero h1 {
+    font-size: clamp(26px, 5vw, 40px);
+    margin: 0 0 6px;
+    letter-spacing: -0.5px;
+  }
+  .route {
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 700;
+    color: var(--accent);
+    margin: 6px 0;
+  }
+  .dates { color: var(--muted); font-size: 15px; }
+  .legend {
+    display: inline-flex; gap: 18px; flex-wrap: wrap; justify-content: center;
+    margin-top: 16px; font-size: 13px; color: var(--muted);
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+  h2.section {
+    font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--muted); margin: 46px 0 14px; font-weight: 700;
+  }
+
+  /* Tables */
+  .table-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--panel-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+  tr:last-child td { border-bottom: none; }
+  td.nowrap { white-space: nowrap; }
+  .seg { font-weight: 600; }
+
+  /* City sections */
+  .city {
+    margin-top: 56px;
+    border-top: 2px solid var(--cityclr, var(--line));
+    padding-top: 8px;
+  }
+  .city h2.cityname {
+    font-size: clamp(24px, 4.5vw, 34px);
+    margin: 14px 0 4px;
+  }
+  .city .cityclr-bar { color: var(--cityclr); }
+  .city-chicago { --cityclr: var(--chi); }
+  .city-nyc { --cityclr: var(--nyc); }
+  .city-sd { --cityclr: var(--sd); }
+  .city-la { --cityclr: var(--la); }
+
+  /* Day cards */
+  .day {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+  .day-head {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .day-head .dow { font-weight: 800; font-size: 18px; }
+  .day-head .date { color: var(--muted); font-size: 15px; }
+  .day-head .travel {
+    margin-left: auto;
+    font-size: 12.5px; font-weight: 700;
+    color: var(--cityclr, var(--accent));
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    padding: 3px 10px; border-radius: 999px;
+  }
+
+  .timeline { list-style: none; margin: 10px 0 0; padding: 0; }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    gap: 14px;
+    padding: 8px 0;
+    border-top: 1px solid var(--line);
+  }
+  .timeline li:first-child { border-top: none; }
+  .t-time {
+    color: var(--time); font-weight: 700; font-size: 13.5px;
+    font-variant-numeric: tabular-nums; padding-top: 1px;
+  }
+  .t-body { font-size: 15px; }
+  .t-body .note { color: var(--muted); font-style: italic; font-size: 13.5px; }
+  .t-body strong { font-weight: 700; }
+
+  /* Open slot + action markers */
+  li.open .t-time, li.open .t-body { color: var(--open); }
+  li.open .t-time::before { content: "?"; }
+  .badge-open {
+    color: var(--open); font-weight: 800;
+  }
+  .action {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 12px; font-weight: 700;
+    color: var(--action);
+    border: 1px solid var(--action);
+    border-radius: 6px; padding: 0 6px;
+  }
+  .fixed-tag { color: var(--sd); font-weight: 700; }
+
+  /* Sidebars */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    margin: 18px 0;
+  }
+  .panel h3 { margin: 0 0 12px; font-size: 18px; }
+  .panel h4 {
+    margin: 18px 0 8px; font-size: 13px; text-transform: uppercase;
+    letter-spacing: 0.8px; color: var(--muted);
+  }
+  .panel ul { margin: 0; padding-left: 18px; }
+  .panel li { margin: 7px 0; }
+  .panel.suggestions { border-left: 3px solid var(--open); }
+  .panel.flags { border-left: 3px solid var(--accent); }
+  .panel.checklist { border-left: 3px solid var(--action); }
+
+  /* Checklist */
+  .checklist ul { list-style: none; padding-left: 0; }
+  .checklist li {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 5px 0;
+  }
+  .checklist input[type="checkbox"] {
+    margin-top: 3px; width: 16px; height: 16px; accent-color: var(--accent); flex: none;
+  }
+  .checklist label { cursor: pointer; }
+  .checklist input:checked + label { color: var(--muted); text-decoration: line-through; }
+
+  footer {
+    text-align: center; color: var(--muted); font-size: 13px;
+    margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 560px) {
+    .timeline li { grid-template-columns: 70px 1fr; gap: 10px; }
+    .day-head .travel { margin-left: 0; }
+    th, td { padding: 9px 10px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#glance">✈️ Glance</a>
+  <a href="#chicago">🌆 Chicago</a>
+  <a href="#nyc">🗽 NYC</a>
+  <a href="#sd">🌊 San Diego</a>
+  <a href="#la">🌴 LA</a>
+  <a href="#suggestions">💡 Suggestions</a>
+  <a href="#flags">🔧 Flags</a>
+  <a href="#checklist">📋 Checklist</a>
+</nav>
+
+<header class="hero">
+  <h1>Itinerary — June 2026</h1>
+  <div class="route">Chicago → New York → San Diego → Los Angeles → Taipei</div>
+  <div class="dates">Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE) · 14 days</div>
+  <div class="legend">
+    <span><span class="dot" style="background:var(--open)"></span> <code>?</code> open slot, not yet decided</span>
+    <span><span class="dot" style="background:var(--action)"></span> <code>[ ]</code> action needed before the trip</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- GLANCE -->
+  <section id="glance">
+    <h2 class="section">✈️ Flights &amp; rail at a glance</h2>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Segment</th><th>Carrier / No.</th><th>Depart</th><th>Arrive</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="nowrap">6/10 Wed</td>
+            <td class="seg"><a href="https://www.taoyuan-airport.com/main_en/">TPE</a> → <a href="https://www.flychicago.com/ohare/home/pages/default.aspx">ORD</a></td>
+            <td><a href="https://www.evaair.com/en-us/fly-prepare/before-you-fly/cabin-and-seat/royal-laurel-class/">EVA BR056</a> · Royal Laurel</td>
+            <td class="nowrap">9:00 PM</td>
+            <td class="nowrap">9:00 PM (ORD)</td>
+          </tr>
+          <tr>
+            <td class="nowrap">6/14 Sun</td>
+            <td class="seg">ORD → LGA</td>
+            <td>United UA2124</td>
+            <td class="nowrap">4:00 PM</td>
+            <td class="nowrap">7:22 PM</td>
+          </tr>
+          <tr>
+            <td class="nowrap">6/18 Thu</td>
+            <td class="seg">EWR → SAN</td>
+            <td>United UA1626</td>
+            <td class="nowrap">8:47 PM</td>
+            <td class="nowrap">11:40 PM</td>
+          </tr>
+          <tr>
+            <td class="nowrap">6/21 Sun</td>
+            <td class="seg">San Diego → Los Angeles</td>
+            <td>Amtrak Pacific Surfliner 777</td>
+            <td class="nowrap">12:01 PM</td>
+            <td class="nowrap">3:00 PM (LA Union)</td>
+          </tr>
+          <tr>
+            <td class="nowrap">6/23 Tue</td>
+            <td class="seg">LAX → TPE</td>
+            <td>EVA BR011</td>
+            <td class="nowrap">12:15 AM</td>
+            <td class="nowrap">5:00 AM (+1, TPE)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="section">🏨 Hotels</h2>
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr><th>City</th><th>Hotel</th><th>Check-in</th><th>Check-out</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Chicago</td><td>Hyatt Regency Chicago (151 E Wacker Dr)</td><td class="nowrap">6/10 Wed</td><td class="nowrap">6/14 Sun</td></tr>
+          <tr><td>NYC</td><td>Thompson Central Park (119 W 56th St)</td><td class="nowrap">6/14 Sun</td><td class="nowrap">6/18 Thu</td></tr>
+          <tr><td>San Diego ①</td><td>Manchester Grand Hyatt (Embarcadero)</td><td class="nowrap">6/18 Thu</td><td class="nowrap">6/20 Sat</td></tr>
+          <tr><td>San Diego ②</td><td>Andaz San Diego (Gaslamp)</td><td class="nowrap">6/20 Sat</td><td class="nowrap">6/21 Sun</td></tr>
+          <tr><td>LA</td><td>The Georgian, Santa Monica</td><td class="nowrap">6/21 Sun</td><td class="nowrap">6/22 Mon</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- CHICAGO -->
+  <section id="chicago" class="city city-chicago">
+    <h2 class="cityname">🌆 <span class="cityclr-bar">Chicago</span></h2>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Wed</span><span class="date">· 6/10</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">9:00 PM</span><span class="t-body"><strong>TPE → ORD</strong>, EVA BR056 Royal Laurel · arrive ORD <strong>9:00 PM</strong></span></li>
+        <li><span class="t-time">—</span><span class="t-body">Hotel check-in <span class="note">(~10:00–10:30 PM)</span></span></li>
+        <li><span class="t-time">11:00 PM</span><span class="t-body"><a href="https://greenmilljazz.com/">Green Mill Jazz Club</a> <span class="note">(Uptown, ~20 min cab; cousin's pick — "small, cozy, intimate")</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Thu</span><span class="date">· 6/11</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">10:00 AM</span><span class="t-body">Chicago Architecture Center — architectural boat tour</span></li>
+        <li><span class="t-time">11:30 AM</span><span class="t-body">CAC museum</span></li>
+        <li><span class="t-time">12:00 PM</span><span class="t-body">Wildberry Café — brunch</span></li>
+        <li><span class="t-time">1:00 PM</span><span class="t-body">Magnificent Mile shopping</span></li>
+        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open afternoon slot</span></span></li>
+        <li><span class="t-time">5:00 PM</span><span class="t-body">Chicago Cut Steakhouse — dinner</span></li>
+        <li><span class="t-time">7:00 PM</span><span class="t-body"><a href="https://360chicago.com/">360 Chicago observatory</a> <span class="note">(formerly Hancock Observatory)</span> — arrive while still bright, stay through sunset (~8:25 PM) and into blue hour. Alternative: 96th-floor Signature Lounge for the price of a drink.</span></li>
+        <li><span class="t-time">opt.</span><span class="t-body"><span class="note">Optional add: <a href="https://www.secondcity.com/">Second City Mainstage</a> Thursday 8:00 PM show (~90 min, Old Town, ~10 min cab from hotel) — would replace or trail the 360 visit</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Fri</span><span class="date">· 6/12</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">11:00 AM</span><span class="t-body">Art Institute of Chicago</span></li>
+        <li><span class="t-time">1:00 PM</span><span class="t-body">Girl &amp; the Goat</span></li>
+        <li><span class="t-time">2:30 PM</span><span class="t-body">Millennium Park</span></li>
+        <li><span class="t-time">4:30 PM</span><span class="t-body">Depart for Rate Field</span></li>
+        <li><span class="t-time">6:40 PM</span><span class="t-body">Dodgers @ White Sox, Rate Field <span class="note">(first pitch 6:40 PM confirmed)</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Sat</span><span class="date">· 6/13</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">11:00 AM</span><span class="t-body"><a href="https://auchevalchicago.com/">Au Cheval</a> — bone marrow + cheeseburger <span class="note">(queue by 10:30 AM, Saturday lines fill fast)</span></span></li>
+        <li><span class="t-time">1:30 PM</span><span class="t-body"><a href="https://www.starevents.com/event/andersonville-midsommarfest/">Andersonville Midsommarfest</a> <span class="note">(~25 min north; brief visit, no need to commit a full afternoon)</span></span></li>
+        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open late afternoon</span></span></li>
+        <li><span class="t-time">5:00 PM</span><span class="t-body">Hotel · prepare <span class="note">(business attire / cocktail — Media Awards is not black-tie)</span></span></li>
+        <li><span class="t-time">7:00 PM</span><span class="t-body"><a href="https://www.jamesbeard.org/awards">James Beard Media Awards</a></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Sun</span><span class="date">· 6/14</span><span class="travel">Chicago → New York</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">10:00 AM</span><span class="t-body">The Allis (Soho House) — brunch</span></li>
+        <li><span class="t-time">11:30 AM</span><span class="t-body">Goose Island Brewery</span></li>
+        <li><span class="t-time">1:00 PM</span><span class="t-body">Back to hotel</span></li>
+        <li><span class="t-time">2:00 PM</span><span class="t-body">Car to ORD</span></li>
+        <li><span class="t-time">4:00 PM</span><span class="t-body">United UA2124, ORD → LGA</span></li>
+        <li><span class="t-time">7:22 PM</span><span class="t-body">Arrive LGA · taxi to Thompson Central Park</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NEW YORK -->
+  <section id="nyc" class="city city-nyc">
+    <h2 class="cityname">🗽 <span class="cityclr-bar">New York</span></h2>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Sun</span><span class="date">· 6/14 (cont.)</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">8:30 PM</span><span class="t-body">Hotel arrival</span></li>
+        <li><span class="t-time">9:00 PM</span><span class="t-body">Dinner</span></li>
+        <li><span class="t-time">10:00 PM</span><span class="t-body">Bar / nightcap</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Mon</span><span class="date">· 6/15</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">10:15 AM</span><span class="t-body">Met tour with Kate (3 hrs) → ends <strong>1:15 PM</strong> <span class="note">(Raphael on view)</span></span></li>
+        <li><span class="t-time">1:30 PM</span><span class="t-body">Lunch <span class="note">(ask Kate for a nearby rec)</span></span></li>
+        <li><span class="t-time">2:30 PM</span><span class="t-body">Central Park horse carriage (55 min · departs 59th &amp; 7th) <span class="action">[ ] book</span></span></li>
+        <li><span class="t-time">4:00 PM</span><span class="t-body">Madison Avenue shopping / walk</span></li>
+        <li><span class="t-time">6:00 PM</span><span class="t-body">Catch-up with Changhyun <span class="action">[ ] confirm with him</span></span></li>
+        <li><span class="t-time">7:30 PM</span><span class="t-body">Top of the Rock VIP (sunset 8:30 PM, linger through blue hour) <span class="note">— droppable</span></span></li>
+        <li><span class="t-time">8:30 PM</span><span class="t-body">Dinner</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Tue</span><span class="date">· 6/16</span><span class="travel">Option B: 9/11 moved here</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">9:15 AM</span><span class="t-body">Ballet Academy East · 1651 Third Ave (UES) <span class="note">(–10:45 AM)</span></span></li>
+        <li><span class="t-time">11:00 AM</span><span class="t-body">MoMA (Midtown, 53rd St)</span></li>
+        <li><span class="t-time">1:00 PM</span><span class="t-body">Lunch (Midtown)</span></li>
+        <li><span class="t-time">2:30 PM</span><span class="t-body"><a href="https://www.911memorial.org/visit">9/11 Memorial &amp; Museum</a> (FiDi) <span class="action">[ ] timed entry QR code</span> <span class="note">· last entry 5:30 PM; allow ~1.5–2 hrs</span></span></li>
+        <li><span class="t-time">5:00 PM</span><span class="t-body">Head north toward West Village</span></li>
+        <li><span class="t-time">5:30 PM</span><span class="t-body">Via Carota (West Village) <span class="action">[ ] reserve / confirm walk-in</span></span></li>
+        <li><span class="t-time">7:00 PM</span><span class="t-body"><em>MJ the Musical</em>, Neil Simon Theatre (250 W 52nd St)</span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Wed</span><span class="date">· 6/17</span><span class="travel">Option B: N → S → Midtown</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">9:00 AM</span><span class="t-body">Ballet Academy East (UES, ~92nd St) <span class="note">· far north, start here (–10:30 AM)</span></span></li>
+        <li><span class="t-time">11:00 AM</span><span class="t-body">Brunch / drift south toward Midtown</span></li>
+        <li><span class="t-time">1:00 PM</span><span class="t-body">One Vanderbilt · SUMMIT Premium (42nd &amp; Vanderbilt) <span class="fixed-tag">✦ fixed</span> <span class="action">[ ] print at home</span></span></li>
+        <li><span class="t-time">2:15 PM</span><span class="t-body">Lunch near Grand Central</span></li>
+        <li><span class="t-time">3:30 PM</span><span class="t-body">Tibi + Theory · 120 Wooster St, SoHo</span></li>
+        <li><span class="t-time">5:30 PM</span><span class="t-body">Back to Midtown / hotel · freshen up</span></li>
+        <li><span class="t-time">6:45 PM</span><span class="t-body"><a href="https://www.parisbarnyc.com/">Paris Bar</a> · 120 W 57th St <span class="note">(~5 min walk from Thompson)</span></span></li>
+        <li><span class="t-time">7:30 PM</span><span class="t-body"><a href="https://themasqueradeshow.com/">The Masquerade</a> · 218 W 57th St <span class="note">(~7 min walk from Paris Bar)</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Thu</span><span class="date">· 6/18</span><span class="travel">New York → San Diego</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">11:00 AM</span><span class="t-body">Art Smart art &amp; architecture tour with Christian (High Line + Hudson Yards + galleries, 3 hrs)</span></li>
+        <li><span class="t-time">2:00 PM</span><span class="t-body">Lunch in Chelsea</span></li>
+        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">3:00 PM — open slot</span></span></li>
+        <li><span class="t-time">5:30 PM</span><span class="t-body">Head to EWR</span></li>
+        <li><span class="t-time">8:47 PM</span><span class="t-body">United UA1626, EWR → SAN · arrive <strong>11:40 PM</strong></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SAN DIEGO -->
+  <section id="sd" class="city city-sd">
+    <h2 class="cityname">🌊 <span class="cityclr-bar">San Diego</span></h2>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Fri</span><span class="date">· 6/19</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">9:00 AM</span><span class="t-body">Another Side of San Diego · 4-hour tour <span class="note">(–1:00 PM)</span></span></li>
+        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Afternoon</span> <span class="note">— suggested fill: 3-hour blue whale watching tour from Broadway Pier (peak season, see "Suggestions" below)</span></span></li>
+        <li class="open"><span class="t-time">5:00 PM</span><span class="t-body"><span class="badge-open">? food tour / beach</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Sat</span><span class="date">· 6/20</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">2:00 PM</span><span class="t-body">NASCAR grandstand <span class="badge-open">?</span> <span class="note">— if Naval Base Coronado, allow 45+ min for bridge return</span></span></li>
+        <li><span class="t-time">5:00 PM</span><span class="t-body">Check out Manchester Grand Hyatt → check in Andaz</span></li>
+        <li><span class="t-time">5:30 PM</span><span class="t-body">Dinner / walking dinner tour (Gaslamp)</span></li>
+        <li><span class="t-time">7:00 PM</span><span class="t-body">KSON Countryfest · Gallagher Square at Petco Park <span class="note">(~0.5 mi / 10 min walk from Andaz — no cab needed)</span> · Stephen Wilson Jr., Carter Faith, others <span class="action">[ ] tickets</span></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- LOS ANGELES -->
+  <section id="la" class="city city-la">
+    <h2 class="cityname">🌴 <span class="cityclr-bar">Los Angeles / Santa Monica</span></h2>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Sun</span><span class="date">· 6/21</span><span class="travel">San Diego → LA</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">11:30 AM</span><span class="t-body">Check out hotel → Santa Fe Depot</span></li>
+        <li><span class="t-time">12:01 PM</span><span class="t-body">Surfliner 777 northbound · Business class, ocean-side right</span></li>
+        <li><span class="t-time">3:00 PM</span><span class="t-body">Arrive LA Union Station · Uber to The Georgian, Santa Monica</span></li>
+        <li><span class="t-time">4:00 PM</span><span class="t-body">Check in · drop bags</span></li>
+        <li><span class="t-time">4:30 PM</span><span class="t-body">Santa Monica Beach / Palisades Park bluffs</span></li>
+        <li><span class="t-time">6:30 PM</span><span class="t-body">Uber to Griffith Observatory <span class="note">(~45–60 min on a Sunday)</span></span></li>
+        <li><span class="t-time">8:00 PM</span><span class="t-body">Sunset at Griffith (sunset 8:08 PM)</span></li>
+        <li><span class="t-time">9:30 PM</span><span class="t-body">Dinner <span class="note">(Los Feliz / Silver Lake on the way back, or back in Santa Monica)</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Mon</span><span class="date">· 6/22</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">Morning</span><span class="t-body">Check out Georgian, luggage in car all day</span></li>
+        <li><span class="t-time">—</span><span class="t-body">Beverly Hills</span></li>
+        <li><span class="t-time">—</span><span class="t-body">Brunch</span></li>
+        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open afternoon slot</span> <span class="note">— suggested fill: Felix Trattoria, Abbot Kinney, Venice (Resy rolling window — see "Suggestions")</span></span></li>
+        <li><span class="t-time">5:00 PM</span><span class="t-body">K-town dinner · Park's BBQ</span></li>
+        <li><span class="t-time">9:30 PM</span><span class="t-body">Depart for airport <span class="note">(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car.)</span></span></li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="day-head"><span class="dow">Tue</span><span class="date">· 6/23</span><span class="travel">LA → Taipei</span></div>
+      <ul class="timeline">
+        <li><span class="t-time">12:15 AM</span><span class="t-body">EVA BR011, LAX → TPE</span></li>
+        <li><span class="t-time">5:00 AM</span><span class="t-body"><strong>(+1, 6/24)</strong> — Arrive TPE</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SUGGESTIONS -->
+  <section id="suggestions">
+    <h2 class="section">💡 Suggestions to consider</h2>
+    <div class="panel suggestions">
+      <p class="note" style="margin-top:0">These were live options earlier and remain easy to slot in if you change your mind:</p>
+      <ul>
+        <li><strong>Blue whale watching</strong> — 3-hour tour from Broadway Pier on the Embarcadero (walking distance from Manchester Grand Hyatt). Operators: <a href="https://www.sdwhalewatch.com/">San Diego Whale Watch</a> or <a href="https://www.hornblower.com/sd/cruise/whale-watching-cruise-from-san-diego/">Hornblower</a>. Peak season for blue whales (largest animals ever to live on Earth) is June–September. Natural fit for the 6/19 afternoon <span class="badge-open">?</span> slot or as a replacement for the Another Side tour if you want water over land.</li>
+        <li><strong>Felix Trattoria</strong> — Abbot Kinney, Venice. Evan Funke's flagship; sourdough pastas, considered LA's best Italian. Slots well into 6/22 open afternoon as a late lunch (~2 PM), then Abbot Kinney shopping, then K-town dinner — though that's two big meals close together. Resy opens on a rolling window (~28 days; ~5/25 for 6/22).</li>
+        <li><strong>Second City Mainstage</strong> — Thursday 6/11 8:00 PM. Birthplace of improv per cousin. Currently dropped from the day; could be added after 360 Chicago (show ends ~9:30 PM, walkable back to hotel area).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FLAGS -->
+  <section id="flags">
+    <h2 class="section">🔧 Changes &amp; flags</h2>
+    <div class="panel flags">
+      <h4>This round (applied)</h4>
+      <ul>
+        <li><strong>6/17 routing:</strong> confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.</li>
+        <li><strong>6/13 Au Cheval:</strong> pulled to 11:00 AM (open time, queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.</li>
+        <li><strong>6/11 360 Chicago:</strong> moved 8 PM → 7:00 PM to catch pre-sunset bright + sunset + blue hour per cousin's tip.</li>
+        <li><strong>6/13 dress:</strong> Media Awards = business attire / cocktail, not black-tie.</li>
+        <li><strong>6/19 boat slot:</strong> marked <span class="badge-open">?</span> with whale watching as a suggested fill in the side panel.</li>
+        <li><strong>6/22 luggage:</strong> confirmed travels with you all day; K-town → LAX direct after dinner.</li>
+        <li><strong>6/21 Griffith:</strong> Uber confirmed (skip the parking nightmare).</li>
+        <li><strong>Flight numbers added:</strong> UA1626 EWR→SAN was TBD; Surfliner LA Union arrival 3:00 PM was blank.</li>
+      </ul>
+      <h4>Verified facts (from your prior notes, still good)</h4>
+      <ul>
+        <li><strong>6/12 Dodgers @ White Sox</strong>, Rate Field, first pitch 6:40 PM CT. 4:30 PM departure sensible.</li>
+        <li><strong>9/11 Museum</strong> open 9 AM–7 PM, hard last entry 5:30 PM, ~1.5–2 hrs inside.</li>
+      </ul>
+      <h4>Still open / lower-priority flags</h4>
+      <ul>
+        <li><strong>6/15 density:</strong> seven moves in twelve hours. Top of the Rock at 7:30 PM is sound (~1 hr inside before 8:30 PM sunset), but you've marked it droppable — that's the easiest release valve if Madison or Changhyun runs long.</li>
+        <li><strong>6/16 ballet → MoMA:</strong> UES 92nd to MoMA 53rd is ~15–20 min by cab, leave promptly.</li>
+        <li><strong>6/16 9/11 Museum timing:</strong> 2:30 PM entry with ~2 hrs inside puts you out by 4:30, then UES/Midtown → West Village for Via Carota at 5:30 is fine.</li>
+        <li><strong>Via Carota</strong> runs walk-in-heavy; confirm reservations before counting on the slot.</li>
+        <li><strong>6/20 same-day triple</strong> (NASCAR 2 PM → hotel switch 5 PM → KSON 7 PM): logistics OK now that KSON venue is confirmed walking distance from Andaz, but lock NASCAR start/end times — a 4 PM session end at Naval Base Coronado + bridge crossing eats your hotel-switch buffer.</li>
+        <li><strong>6/21 sequence:</strong> Uber to Griffith from Santa Monica is 45–60 min Sunday afternoon. 6:30 PM departure puts you there ~7:30, in line for parking lot/security ~7:45, on the lawn for sunset 8:08 PM — workable but no slack.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section id="checklist">
+    <h2 class="section">📋 Booking checklist</h2>
+    <div class="panel checklist">
+      <h4>Tier 1 — book this week</h4>
+      <ul>
+        <li><input type="checkbox" id="c1"><label for="c1">Met private tour with Kate · 6/15 confirmed?</label></li>
+        <li><input type="checkbox" id="c2"><label for="c2">Central Park horse carriage · 6/15</label></li>
+        <li><input type="checkbox" id="c3"><label for="c3">SUMMIT One Vanderbilt Premium · 6/17</label></li>
+        <li><input type="checkbox" id="c4"><label for="c4">9/11 Memorial timed entry · 6/16 2:30 PM</label></li>
+        <li><input type="checkbox" id="c5"><label for="c5">MJ the Musical, Neil Simon Theatre · 6/16 7 PM</label></li>
+        <li><input type="checkbox" id="c6"><label for="c6">Masquerade show tickets · 6/17 7:30 PM</label></li>
+        <li><input type="checkbox" id="c7"><label for="c7">Paris Bar reservation · 6/17 6:45 PM</label></li>
+        <li><input type="checkbox" id="c8"><label for="c8">James Beard Media Awards · 6/13 7 PM</label></li>
+        <li><input type="checkbox" id="c9"><label for="c9">Andaz San Diego · 6/20 (1 night)</label></li>
+        <li><input type="checkbox" id="c10"><label for="c10">KSON Countryfest tickets · 6/20 7 PM</label></li>
+        <li><input type="checkbox" id="c11"><label for="c11">NASCAR tickets · 6/20 (confirm session time)</label></li>
+      </ul>
+      <h4>Tier 2 — within 1–2 weeks</h4>
+      <ul>
+        <li><input type="checkbox" id="c12"><label for="c12">Architecture boat tour · 6/11 10 AM</label></li>
+        <li><input type="checkbox" id="c13"><label for="c13">360 Chicago timed entry · 6/11 7 PM</label></li>
+        <li><input type="checkbox" id="c14"><label for="c14">Chicago Cut Steakhouse · 6/11 5 PM</label></li>
+        <li><input type="checkbox" id="c15"><label for="c15">Wildberry Café · 6/11 noon (walk-in usually fine on Thursday)</label></li>
+        <li><input type="checkbox" id="c16"><label for="c16">Girl &amp; the Goat · 6/12 1 PM</label></li>
+        <li><input type="checkbox" id="c17"><label for="c17">White Sox vs. Dodgers tickets · 6/12 6:40 PM</label></li>
+        <li><input type="checkbox" id="c18"><label for="c18">Via Carota · 6/16 5:30 PM</label></li>
+        <li><input type="checkbox" id="c19"><label for="c19">Art Smart tour with Christian · 6/18 11 AM</label></li>
+        <li><input type="checkbox" id="c20"><label for="c20">Another Side of San Diego · 6/19 9 AM</label></li>
+        <li><input type="checkbox" id="c21"><label for="c21">Park's BBQ · 6/22 5 PM</label></li>
+      </ul>
+      <h4>Day-of decisions</h4>
+      <ul>
+        <li><input type="checkbox" id="c22"><label for="c22">Blue whale watching 6/19 PM — add back or skip</label></li>
+        <li><input type="checkbox" id="c23"><label for="c23">Felix Trattoria 6/22 afternoon — add or skip</label></li>
+        <li><input type="checkbox" id="c24"><label for="c24">6/13 late afternoon ? slot</label></li>
+        <li><input type="checkbox" id="c25"><label for="c25">6/18 3 PM ? slot</label></li>
+        <li><input type="checkbox" id="c26"><label for="c26">6/19 5 PM ? food tour / beach</label></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    Source of truth: <a href="itinerary-v3.md">itinerary-v3.md</a> · Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
+  </footer>
+
+</div>
+
+<script>
+  // Persist checklist state locally so progress survives a refresh.
+  document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function (box) {
+    var key = 'chi-nyc-sd-trip:' + box.id;
+    if (localStorage.getItem(key) === '1') box.checked = true;
+    box.addEventListener('change', function () {
+      localStorage.setItem(key, box.checked ? '1' : '0');
+    });
+  });
+</script>
+
+</body>
+</html>
