@@ -3,113 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Itinerary — June 2026 · CHI → NYC → SD → LA → TPE</title>
+<title>June 2026 · Chicago → New York → San Diego → Los Angeles → Taipei</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1115;
-    --panel: #171a21;
-    --panel-2: #1d212b;
-    --line: #2a2f3a;
-    --text: #e7e9ee;
-    --muted: #9aa3b2;
-    --accent: #7aa2ff;
-    --accent-soft: #2a3a6b;
-    --open: #f0b429;
-    --action: #ff6b81;
-    --time: #b6c2da;
-    --chi: #ff8c42;
-    --nyc: #c792ea;
-    --sd: #34c3eb;
-    --la: #57d9a3;
+    --paper: #fbf7f0;
+    --paper-2: #f4ede1;
+    --card: #ffffff;
+    --ink: #20201d;
+    --ink-soft: #5c574e;
+    --muted: #8a8479;
+    --line: #e6ddcd;
+    --line-soft: #efe8db;
+    --accent: #b4612f;       /* terracotta */
+    --accent-soft: #f0e3d6;
+    --open: #c08a1e;
+    --action: #b23b4e;
+    --chi: #d2691e;
+    --nyc: #7c5cbf;
+    --sd: #2f8fae;
+    --la: #3f9d7a;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.55;
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
   a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a:hover { text-decoration: underline; text-underline-offset: 2px; }
 
-  /* Sticky nav */
+  /* Nav */
   nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(15,17,21,0.92);
-    backdrop-filter: blur(10px);
+    background: rgba(251,247,240,0.85);
+    backdrop-filter: blur(12px) saturate(1.1);
     border-bottom: 1px solid var(--line);
-    display: flex; flex-wrap: wrap; gap: 4px;
-    padding: 10px 16px;
+    display: flex; flex-wrap: wrap; gap: 2px;
+    padding: 11px 16px;
     justify-content: center;
   }
   nav a {
-    color: var(--muted);
-    padding: 6px 12px;
+    color: var(--ink-soft);
+    padding: 6px 13px;
     border-radius: 999px;
-    font-size: 14px; font-weight: 600;
+    font-size: 13.5px; font-weight: 600; letter-spacing: 0.2px;
     white-space: nowrap;
+    transition: background .15s, color .15s;
   }
-  nav a:hover { background: var(--panel-2); color: var(--text); text-decoration: none; }
+  nav a:hover { background: var(--accent-soft); color: var(--accent); text-decoration: none; }
 
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 18px 80px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 22px 90px; }
 
+  /* Hero */
   header.hero {
     text-align: center;
-    padding: 48px 18px 28px;
-    background: radial-gradient(900px 300px at 50% -40%, #25305a 0%, transparent 70%);
+    padding: 72px 22px 40px;
+    position: relative;
+  }
+  header.hero .kicker {
+    font-size: 12.5px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 18px;
   }
   header.hero h1 {
-    font-size: clamp(26px, 5vw, 40px);
-    margin: 0 0 6px;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(34px, 6.5vw, 60px);
+    line-height: 1.04;
     letter-spacing: -0.5px;
+    margin: 0 0 18px;
   }
+  header.hero h1 .amp { color: var(--accent); font-style: italic; }
   .route {
-    font-size: clamp(16px, 3vw, 22px);
-    font-weight: 700;
-    color: var(--accent);
-    margin: 6px 0;
+    font-family: var(--serif);
+    font-size: clamp(17px, 3vw, 23px);
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 auto 14px;
+    max-width: 640px;
   }
-  .dates { color: var(--muted); font-size: 15px; }
+  .dates {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--muted); font-size: 14px; font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .dates::before, .dates::after { content: ""; width: 28px; height: 1px; background: var(--line); display: inline-block; }
   .legend {
-    display: inline-flex; gap: 18px; flex-wrap: wrap; justify-content: center;
-    margin-top: 16px; font-size: 13px; color: var(--muted);
+    display: inline-flex; gap: 22px; flex-wrap: wrap; justify-content: center;
+    margin-top: 26px; font-size: 13px; color: var(--muted);
   }
-  .legend span { display: inline-flex; align-items: center; gap: 6px; }
-  .dot { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend code { font-family: var(--sans); background: var(--paper-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px; font-size: 12px; color: var(--ink-soft); }
 
+  /* Section label */
   h2.section {
-    font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px;
-    color: var(--muted); margin: 46px 0 14px; font-weight: 700;
+    font-family: var(--sans);
+    font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--accent); margin: 56px 0 18px; font-weight: 700;
+    display: flex; align-items: center; gap: 12px;
   }
+  h2.section::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
   /* Tables */
   .table-card {
-    background: var(--panel);
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 1px 2px rgba(40,30,10,0.03), 0 8px 24px -16px rgba(40,30,10,0.12);
   }
   table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
-  th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { background: var(--panel-2); font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); }
+  th, td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  th { background: var(--paper-2); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 700; }
   tr:last-child td { border-bottom: none; }
   td.nowrap { white-space: nowrap; }
   .seg { font-weight: 600; }
 
   /* City sections */
-  .city {
-    margin-top: 56px;
-    border-top: 2px solid var(--cityclr, var(--line));
-    padding-top: 8px;
+  .city { margin-top: 70px; }
+  .city .city-index {
+    font-family: var(--serif); font-size: 14px; font-weight: 600;
+    letter-spacing: 3px; text-transform: uppercase; color: var(--cityclr);
   }
   .city h2.cityname {
-    font-size: clamp(24px, 4.5vw, 34px);
-    margin: 14px 0 4px;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(30px, 6vw, 46px);
+    margin: 6px 0 4px;
+    letter-spacing: -0.5px;
+    display: flex; align-items: baseline; gap: 12px;
   }
-  .city .cityclr-bar { color: var(--cityclr); }
+  .city .cityname::after {
+    content: ""; flex: 1; height: 3px; border-radius: 3px;
+    background: var(--cityclr); opacity: 0.5; align-self: center;
+  }
   .city-chicago { --cityclr: var(--chi); }
   .city-nyc { --cityclr: var(--nyc); }
   .city-sd { --cityclr: var(--sd); }
@@ -117,123 +153,135 @@
 
   /* Day cards */
   .day {
-    background: var(--panel);
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 18px 20px;
-    margin: 18px 0;
+    border-radius: 16px;
+    padding: 22px 26px 20px;
+    margin: 20px 0;
+    box-shadow: 0 1px 2px rgba(40,30,10,0.03), 0 10px 30px -22px rgba(40,30,10,0.18);
   }
   .day-head {
     display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
-    margin-bottom: 6px;
+    padding-bottom: 14px; margin-bottom: 6px;
+    border-bottom: 1px solid var(--line-soft);
   }
-  .day-head .dow { font-weight: 800; font-size: 18px; }
-  .day-head .date { color: var(--muted); font-size: 15px; }
+  .day-head .dow { font-family: var(--serif); font-weight: 600; font-size: 22px; }
+  .day-head .date { color: var(--muted); font-size: 15px; font-weight: 500; }
   .day-head .travel {
     margin-left: auto;
-    font-size: 12.5px; font-weight: 700;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.3px;
     color: var(--cityclr, var(--accent));
-    background: var(--panel-2);
-    border: 1px solid var(--line);
-    padding: 3px 10px; border-radius: 999px;
+    background: color-mix(in srgb, var(--cityclr, var(--accent)) 12%, white);
+    border: 1px solid color-mix(in srgb, var(--cityclr, var(--accent)) 30%, white);
+    padding: 4px 12px; border-radius: 999px;
   }
 
-  .timeline { list-style: none; margin: 10px 0 0; padding: 0; }
+  .timeline { list-style: none; margin: 6px 0 0; padding: 0; }
   .timeline li {
     display: grid;
-    grid-template-columns: 86px 1fr;
-    gap: 14px;
-    padding: 8px 0;
-    border-top: 1px solid var(--line);
+    grid-template-columns: 84px 1fr;
+    gap: 16px;
+    padding: 11px 0;
+    position: relative;
+    border-top: 1px solid var(--line-soft);
   }
   .timeline li:first-child { border-top: none; }
   .t-time {
-    color: var(--time); font-weight: 700; font-size: 13.5px;
-    font-variant-numeric: tabular-nums; padding-top: 1px;
+    color: var(--ink-soft); font-weight: 600; font-size: 13px;
+    font-variant-numeric: tabular-nums; padding-top: 2px;
+    text-align: right;
   }
-  .t-body { font-size: 15px; }
+  .t-body { font-size: 15.5px; position: relative; padding-left: 20px; }
+  .t-body::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--card); border: 2px solid var(--cityclr, var(--accent));
+  }
   .t-body .note { color: var(--muted); font-style: italic; font-size: 13.5px; }
   .t-body strong { font-weight: 700; }
+  .t-body em { font-style: italic; }
 
   /* Open slot + action markers */
+  li.open .t-body::before { background: var(--open); border-color: var(--open); }
   li.open .t-time, li.open .t-body { color: var(--open); }
-  li.open .t-time::before { content: "?"; }
-  .badge-open {
-    color: var(--open); font-weight: 800;
-  }
+  .badge-open { color: var(--open); font-weight: 700; }
   .action {
-    display: inline-block;
-    margin-left: 6px;
-    font-size: 12px; font-weight: 700;
+    display: inline-block; margin-left: 6px;
+    font-size: 11.5px; font-weight: 700; letter-spacing: 0.2px;
     color: var(--action);
-    border: 1px solid var(--action);
-    border-radius: 6px; padding: 0 6px;
+    border: 1px solid color-mix(in srgb, var(--action) 45%, white);
+    background: color-mix(in srgb, var(--action) 8%, white);
+    border-radius: 6px; padding: 1px 7px;
   }
   .fixed-tag { color: var(--sd); font-weight: 700; }
 
-  /* Sidebars */
+  /* Panels */
   .panel {
-    background: var(--panel);
+    background: var(--card);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin: 18px 0;
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin: 20px 0;
+    box-shadow: 0 1px 2px rgba(40,30,10,0.03), 0 10px 30px -22px rgba(40,30,10,0.18);
   }
-  .panel h3 { margin: 0 0 12px; font-size: 18px; }
+  .panel h3 { font-family: var(--serif); margin: 0 0 14px; font-size: 20px; font-weight: 600; }
   .panel h4 {
-    margin: 18px 0 8px; font-size: 13px; text-transform: uppercase;
-    letter-spacing: 0.8px; color: var(--muted);
+    margin: 20px 0 9px; font-size: 12px; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--accent); font-weight: 700;
   }
-  .panel ul { margin: 0; padding-left: 18px; }
-  .panel li { margin: 7px 0; }
+  .panel ul { margin: 0; padding-left: 20px; }
+  .panel li { margin: 8px 0; }
+  .panel .note { color: var(--muted); font-style: italic; }
   .panel.suggestions { border-left: 3px solid var(--open); }
   .panel.flags { border-left: 3px solid var(--accent); }
   .panel.checklist { border-left: 3px solid var(--action); }
 
   /* Checklist */
   .checklist ul { list-style: none; padding-left: 0; }
-  .checklist li {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 5px 0;
-  }
+  .checklist li { display: flex; align-items: flex-start; gap: 11px; padding: 6px 0; margin: 0; }
   .checklist input[type="checkbox"] {
-    margin-top: 3px; width: 16px; height: 16px; accent-color: var(--accent); flex: none;
+    margin-top: 3px; width: 17px; height: 17px; accent-color: var(--accent); flex: none; cursor: pointer;
   }
   .checklist label { cursor: pointer; }
   .checklist input:checked + label { color: var(--muted); text-decoration: line-through; }
 
   footer {
     text-align: center; color: var(--muted); font-size: 13px;
-    margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--line);
+    margin-top: 70px; padding-top: 24px; border-top: 1px solid var(--line);
   }
+  footer .serif { font-family: var(--serif); font-style: italic; }
 
   @media (max-width: 560px) {
-    .timeline li { grid-template-columns: 70px 1fr; gap: 10px; }
+    header.hero { padding-top: 52px; }
+    .timeline li { grid-template-columns: 66px 1fr; gap: 12px; }
+    .day { padding: 18px 18px 16px; }
     .day-head .travel { margin-left: 0; }
-    th, td { padding: 9px 10px; font-size: 13px; }
+    th, td { padding: 10px 11px; font-size: 13px; }
+    .t-body { font-size: 14.5px; }
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#glance">✈️ Glance</a>
-  <a href="#chicago">🌆 Chicago</a>
-  <a href="#nyc">🗽 NYC</a>
-  <a href="#sd">🌊 San Diego</a>
-  <a href="#la">🌴 LA</a>
-  <a href="#suggestions">💡 Suggestions</a>
-  <a href="#flags">🔧 Flags</a>
-  <a href="#checklist">📋 Checklist</a>
+  <a href="#glance">Glance</a>
+  <a href="#chicago">Chicago</a>
+  <a href="#nyc">New York</a>
+  <a href="#sd">San Diego</a>
+  <a href="#la">Los Angeles</a>
+  <a href="#suggestions">Suggestions</a>
+  <a href="#flags">Flags</a>
+  <a href="#checklist">Checklist</a>
 </nav>
 
 <header class="hero">
-  <h1>Itinerary — June 2026</h1>
-  <div class="route">Chicago → New York → San Diego → Los Angeles → Taipei</div>
+  <div class="kicker">June 2026</div>
+  <h1>Chicago <span class="amp">→</span> New York <span class="amp">→</span> San Diego <span class="amp">→</span> Los Angeles <span class="amp">→</span> Taipei</h1>
+  <div class="route">A fourteen-day loop across America, end to end — jazz and steak, museums and ballet, whales and country music, and a last sunset over the Pacific.</div>
   <div class="dates">Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE) · 14 days</div>
   <div class="legend">
-    <span><span class="dot" style="background:var(--open)"></span> <code>?</code> open slot, not yet decided</span>
-    <span><span class="dot" style="background:var(--action)"></span> <code>[ ]</code> action needed before the trip</span>
+    <span><code>?</code> open slot, not yet decided</span>
+    <span><code>[ ]</code> action needed before the trip</span>
   </div>
 </header>
 
@@ -241,7 +289,7 @@
 
   <!-- GLANCE -->
   <section id="glance">
-    <h2 class="section">✈️ Flights &amp; rail at a glance</h2>
+    <h2 class="section">Flights &amp; rail at a glance</h2>
     <div class="table-card">
       <table>
         <thead>
@@ -287,7 +335,7 @@
       </table>
     </div>
 
-    <h2 class="section">🏨 Hotels</h2>
+    <h2 class="section">Hotels</h2>
     <div class="table-card">
       <table>
         <thead>
@@ -306,7 +354,8 @@
 
   <!-- CHICAGO -->
   <section id="chicago" class="city city-chicago">
-    <h2 class="cityname">🌆 <span class="cityclr-bar">Chicago</span></h2>
+    <div class="city-index">Leg I</div>
+    <h2 class="cityname">Chicago</h2>
 
     <div class="day">
       <div class="day-head"><span class="dow">Wed</span><span class="date">· 6/10</span></div>
@@ -324,7 +373,7 @@
         <li><span class="t-time">11:30 AM</span><span class="t-body">CAC museum</span></li>
         <li><span class="t-time">12:00 PM</span><span class="t-body">Wildberry Café — brunch</span></li>
         <li><span class="t-time">1:00 PM</span><span class="t-body">Magnificent Mile shopping</span></li>
-        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open afternoon slot</span></span></li>
+        <li class="open"><span class="t-time">?</span><span class="t-body"><span class="badge-open">Open afternoon slot</span></span></li>
         <li><span class="t-time">5:00 PM</span><span class="t-body">Chicago Cut Steakhouse — dinner</span></li>
         <li><span class="t-time">7:00 PM</span><span class="t-body"><a href="https://360chicago.com/">360 Chicago observatory</a> <span class="note">(formerly Hancock Observatory)</span> — arrive while still bright, stay through sunset (~8:25 PM) and into blue hour. Alternative: 96th-floor Signature Lounge for the price of a drink.</span></li>
         <li><span class="t-time">opt.</span><span class="t-body"><span class="note">Optional add: <a href="https://www.secondcity.com/">Second City Mainstage</a> Thursday 8:00 PM show (~90 min, Old Town, ~10 min cab from hotel) — would replace or trail the 360 visit</span></span></li>
@@ -347,7 +396,7 @@
       <ul class="timeline">
         <li><span class="t-time">11:00 AM</span><span class="t-body"><a href="https://auchevalchicago.com/">Au Cheval</a> — bone marrow + cheeseburger <span class="note">(queue by 10:30 AM, Saturday lines fill fast)</span></span></li>
         <li><span class="t-time">1:30 PM</span><span class="t-body"><a href="https://www.starevents.com/event/andersonville-midsommarfest/">Andersonville Midsommarfest</a> <span class="note">(~25 min north; brief visit, no need to commit a full afternoon)</span></span></li>
-        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open late afternoon</span></span></li>
+        <li class="open"><span class="t-time">?</span><span class="t-body"><span class="badge-open">Open late afternoon</span></span></li>
         <li><span class="t-time">5:00 PM</span><span class="t-body">Hotel · prepare <span class="note">(business attire / cocktail — Media Awards is not black-tie)</span></span></li>
         <li><span class="t-time">7:00 PM</span><span class="t-body"><a href="https://www.jamesbeard.org/awards">James Beard Media Awards</a></span></li>
       </ul>
@@ -368,7 +417,8 @@
 
   <!-- NEW YORK -->
   <section id="nyc" class="city city-nyc">
-    <h2 class="cityname">🗽 <span class="cityclr-bar">New York</span></h2>
+    <div class="city-index">Leg II</div>
+    <h2 class="cityname">New York</h2>
 
     <div class="day">
       <div class="day-head"><span class="dow">Sun</span><span class="date">· 6/14 (cont.)</span></div>
@@ -424,7 +474,7 @@
       <ul class="timeline">
         <li><span class="t-time">11:00 AM</span><span class="t-body">Art Smart art &amp; architecture tour with Christian (High Line + Hudson Yards + galleries, 3 hrs)</span></li>
         <li><span class="t-time">2:00 PM</span><span class="t-body">Lunch in Chelsea</span></li>
-        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">3:00 PM — open slot</span></span></li>
+        <li class="open"><span class="t-time">?</span><span class="t-body"><span class="badge-open">3:00 PM — open slot</span></span></li>
         <li><span class="t-time">5:30 PM</span><span class="t-body">Head to EWR</span></li>
         <li><span class="t-time">8:47 PM</span><span class="t-body">United UA1626, EWR → SAN · arrive <strong>11:40 PM</strong></span></li>
       </ul>
@@ -433,13 +483,14 @@
 
   <!-- SAN DIEGO -->
   <section id="sd" class="city city-sd">
-    <h2 class="cityname">🌊 <span class="cityclr-bar">San Diego</span></h2>
+    <div class="city-index">Leg III</div>
+    <h2 class="cityname">San Diego</h2>
 
     <div class="day">
       <div class="day-head"><span class="dow">Fri</span><span class="date">· 6/19</span></div>
       <ul class="timeline">
         <li><span class="t-time">9:00 AM</span><span class="t-body">Another Side of San Diego · 4-hour tour <span class="note">(–1:00 PM)</span></span></li>
-        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Afternoon</span> <span class="note">— suggested fill: 3-hour blue whale watching tour from Broadway Pier (peak season, see "Suggestions" below)</span></span></li>
+        <li class="open"><span class="t-time">?</span><span class="t-body"><span class="badge-open">Afternoon</span> <span class="note">— suggested fill: 3-hour blue whale watching tour from Broadway Pier (peak season, see "Suggestions" below)</span></span></li>
         <li class="open"><span class="t-time">5:00 PM</span><span class="t-body"><span class="badge-open">? food tour / beach</span></span></li>
       </ul>
     </div>
@@ -457,7 +508,8 @@
 
   <!-- LOS ANGELES -->
   <section id="la" class="city city-la">
-    <h2 class="cityname">🌴 <span class="cityclr-bar">Los Angeles / Santa Monica</span></h2>
+    <div class="city-index">Leg IV</div>
+    <h2 class="cityname">Los Angeles / Santa Monica</h2>
 
     <div class="day">
       <div class="day-head"><span class="dow">Sun</span><span class="date">· 6/21</span><span class="travel">San Diego → LA</span></div>
@@ -479,7 +531,7 @@
         <li><span class="t-time">Morning</span><span class="t-body">Check out Georgian, luggage in car all day</span></li>
         <li><span class="t-time">—</span><span class="t-body">Beverly Hills</span></li>
         <li><span class="t-time">—</span><span class="t-body">Brunch</span></li>
-        <li class="open"><span class="t-time"></span><span class="t-body"><span class="badge-open">Open afternoon slot</span> <span class="note">— suggested fill: Felix Trattoria, Abbot Kinney, Venice (Resy rolling window — see "Suggestions")</span></span></li>
+        <li class="open"><span class="t-time">?</span><span class="t-body"><span class="badge-open">Open afternoon slot</span> <span class="note">— suggested fill: Felix Trattoria, Abbot Kinney, Venice (Resy rolling window — see "Suggestions")</span></span></li>
         <li><span class="t-time">5:00 PM</span><span class="t-body">K-town dinner · Park's BBQ</span></li>
         <li><span class="t-time">9:30 PM</span><span class="t-body">Depart for airport <span class="note">(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car.)</span></span></li>
       </ul>
@@ -496,7 +548,7 @@
 
   <!-- SUGGESTIONS -->
   <section id="suggestions">
-    <h2 class="section">💡 Suggestions to consider</h2>
+    <h2 class="section">Suggestions to consider</h2>
     <div class="panel suggestions">
       <p class="note" style="margin-top:0">These were live options earlier and remain easy to slot in if you change your mind:</p>
       <ul>
@@ -509,7 +561,7 @@
 
   <!-- FLAGS -->
   <section id="flags">
-    <h2 class="section">🔧 Changes &amp; flags</h2>
+    <h2 class="section">Changes &amp; flags</h2>
     <div class="panel flags">
       <h4>This round (applied)</h4>
       <ul>
@@ -541,7 +593,7 @@
 
   <!-- CHECKLIST -->
   <section id="checklist">
-    <h2 class="section">📋 Booking checklist</h2>
+    <h2 class="section">Booking checklist</h2>
     <div class="panel checklist">
       <h4>Tier 1 — book this week</h4>
       <ul>
@@ -582,7 +634,7 @@
   </section>
 
   <footer>
-    Source of truth: <a href="itinerary-v3.md">itinerary-v3.md</a> · Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
+    Source of truth: <a href="itinerary-v3.md">itinerary-v3.md</a> · <span class="serif">Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)</span>
   </footer>
 
 </div>
