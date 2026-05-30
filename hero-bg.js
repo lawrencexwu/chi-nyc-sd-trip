@@ -43,6 +43,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     ochre:   new THREE.Color('#a98545'),
     clay:    new THREE.Color('#b35a3a'),
     clayDeep:new THREE.Color('#8c4329'),
+    gold:    new THREE.Color('#c79a3c'),
   };
   const moteColors = [COLORS.inkMute, COLORS.ochre, COLORS.clay, COLORS.clayDeep];
 
@@ -160,6 +161,71 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   const travMat = pointsMaterial(1.0);
   field.add(new THREE.Points(travGeo, travMat));
 
+  // ---- golden spark: when the traveller meets a node, that node blooms a soft
+  //      gold glow that rises quickly and fades slowly. A feathered (gaussian)
+  //      falloff keeps it reading as a glow rather than a hard dot. ----
+  const GLOW_FRAG = `
+    precision mediump float;
+    uniform float uOpacity;
+    varying float vAlpha;
+    varying vec3 vColor;
+    void main() {
+      float d = distance(gl_PointCoord, vec2(0.5)) * 2.0; // 0 centre -> 1 edge
+      float a = pow(max(1.0 - d, 0.0), 2.2) * vAlpha * uOpacity;
+      if (a < 0.004) discard;
+      gl_FragColor = vec4(vColor, a);
+    }
+  `;
+  const glowMat = new THREE.ShaderMaterial({
+    uniforms: { uScale: { value: 1 }, uOpacity: { value: 1 } },
+    vertexShader: VERT,
+    fragmentShader: GLOW_FRAG,
+    transparent: true,
+    depthTest: false,
+    depthWrite: false,
+    blending: THREE.NormalBlending,
+  });
+  const gPos = new Float32Array(NODES * 3);
+  const gSize = new Float32Array(NODES);   // grows with the bloom
+  const gAlpha = new Float32Array(NODES);  // driven by the glow envelope
+  const gColor = new Float32Array(NODES * 3);
+  for (let i = 0; i < NODES; i++) {
+    gColor[i * 3] = COLORS.gold.r; gColor[i * 3 + 1] = COLORS.gold.g; gColor[i * 3 + 2] = COLORS.gold.b;
+  }
+  const glowGeo = new THREE.BufferGeometry();
+  glowGeo.setAttribute('position', new THREE.BufferAttribute(gPos, 3));
+  glowGeo.setAttribute('aSize', new THREE.BufferAttribute(gSize, 1));
+  glowGeo.setAttribute('aAlpha', new THREE.BufferAttribute(gAlpha, 1));
+  glowGeo.setAttribute('aColor', new THREE.BufferAttribute(gColor, 3));
+  field.add(new THREE.Points(glowGeo, glowMat));
+
+  // glow state: time since last spark per node (large = idle), plus a re-arm
+  // flag so a single pass triggers one spark, in either travel direction.
+  const nodeGlowT = new Float32Array(NODES).fill(999);
+  const nodeArmed = new Array(NODES).fill(true);
+  let travX = 0, travY = 0;
+  function glowEnv(t) {
+    if (t >= 2.4) return 0;
+    const attack = 0.12;
+    if (t < attack) return t / attack;        // quick, smooth rise to full
+    return Math.exp(-(t - attack) / 0.55);     // slow, smooth fade
+  }
+  function updateGlows(dt) {
+    const HIT = 0.05;
+    for (let i = 0; i < NODES; i++) {
+      const dx = travX - nPos[i * 3], dy = travY - nPos[i * 3 + 1];
+      const d = Math.hypot(dx, dy);
+      if (d < HIT && nodeArmed[i]) { nodeGlowT[i] = 0; nodeArmed[i] = false; }
+      else if (d > HIT * 1.8) { nodeArmed[i] = true; }
+      nodeGlowT[i] = Math.min(nodeGlowT[i] + dt, 999);
+      const e = glowEnv(nodeGlowT[i]);
+      gAlpha[i] = e * 0.85 * routeFade;
+      gSize[i] = 22 + 60 * e;                  // expands as it blooms
+    }
+    glowGeo.attributes.aAlpha.needsUpdate = true;
+    glowGeo.attributes.aSize.needsUpdate = true;
+  }
+
   // Recompute node/line geometry whenever the aspect changes.
   let segLen = [], routeLen = 0;
   function layoutNodes() {
@@ -169,9 +235,11 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
       const y = nodeY[i];
       nPos[i * 3] = x; nPos[i * 3 + 1] = y; nPos[i * 3 + 2] = 0;
       lp[i * 3] = x; lp[i * 3 + 1] = y; lp[i * 3 + 2] = 0;
+      gPos[i * 3] = x; gPos[i * 3 + 1] = y; gPos[i * 3 + 2] = 0;
     }
     nodeGeo.attributes.position.needsUpdate = true;
     lineGeo.attributes.position.needsUpdate = true;
+    glowGeo.attributes.position.needsUpdate = true;
     segLen = []; routeLen = 0;
     for (let i = 0; i < NODES - 1; i++) {
       const dx = nPos[(i + 1) * 3] - nPos[i * 3];
@@ -191,6 +259,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     const x = ax + (bx - ax) * f, y = ay + (by - ay) * f;
     tPos[0] = x; tPos[1] = y; tPos[3] = x; tPos[4] = y;
     travGeo.attributes.position.needsUpdate = true;
+    travX = x; travY = y;
   }
 
   // ---- sizing (the canvas is a fixed, viewport-sized layer) ----
@@ -208,6 +277,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     moteMat.uniforms.uScale.value = dpr;
     nodeMat.uniforms.uScale.value = dpr;
     travMat.uniforms.uScale.value = dpr;
+    glowMat.uniforms.uScale.value = dpr;
     heroH = Math.max(1, hero.clientHeight);
     layoutNodes();
     if (!running) renderStatic();
@@ -248,6 +318,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     lineMat.opacity = 0.40 * routeFade;
     travMat.uniforms.uOpacity.value = routeFade;
     moteMat.uniforms.uOpacity.value = moteFade;
+    for (let i = 0; i < NODES; i++) gAlpha[i] = 0; // no sparks in a static frame
+    glowGeo.attributes.aAlpha.needsUpdate = true;
     renderer.render(scene, camera);
   }
 
@@ -277,6 +349,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     moteMat.uniforms.uOpacity.value = moteFade;
     const tri = 1 - Math.abs(((tAccum / TRAVEL_PERIOD) % 2) - 1); // 0→1→0
     setTraveller(tri);
+
+    // golden spark when the traveller meets a node
+    updateGlows(dt);
 
     // ease parallax
     field.position.x += (targetX - field.position.x) * 0.05;
