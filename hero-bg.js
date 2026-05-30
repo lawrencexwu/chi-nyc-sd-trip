@@ -222,8 +222,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   }
   function applyFade() {
     const hp = Math.min((window.scrollY || window.pageYOffset || 0) / (heroH * 0.85), 1);
-    routeFade = 1 - smooth(0, 0.5, hp);   // route gone by ~half a screen down
-    moteFade = 1 - 0.62 * smooth(0, 1, hp); // motes ease to ~0.38 over content
+    routeFade = 1 - smooth(0, 0.5, hp);   // the flight-map route is a hero accent
+    moteFade = 1 - 0.20 * smooth(0, 1, hp); // motes stay present site-wide (~0.80)
   }
 
   // ---- parallax (desktop pointer only; touch keeps the autonomous drift) ----
