@@ -118,7 +118,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   // ---- city nodes + route line ----
   const NODES = 4;
   const nodeFracX = [-0.74, -0.26, 0.26, 0.74]; // spread across the width
-  const nodeY = [0.17, -0.05, 0.11, -0.15];     // a gentle wave
+  const nodeY = [0.40, 0.20, 0.32, 0.12];       // a gentle wave, up in the hero band
   const nPos = new Float32Array(NODES * 3);
   const nSize = new Float32Array(NODES);
   const nAlpha = new Float32Array(NODES);
@@ -193,10 +193,11 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     travGeo.attributes.position.needsUpdate = true;
   }
 
-  // ---- sizing ----
+  // ---- sizing (the canvas is a fixed, viewport-sized layer) ----
+  let heroH = 1;
   function resize() {
-    const w = Math.max(1, hero.clientWidth);
-    const h = Math.max(1, hero.clientHeight);
+    const w = Math.max(1, window.innerWidth);
+    const h = Math.max(1, window.innerHeight);
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     renderer.setPixelRatio(dpr);
     renderer.setSize(w, h, false);
@@ -207,8 +208,22 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     moteMat.uniforms.uScale.value = dpr;
     nodeMat.uniforms.uScale.value = dpr;
     travMat.uniforms.uScale.value = dpr;
+    heroH = Math.max(1, hero.clientHeight);
     layoutNodes();
-    if (!running) renderOnce();
+    if (!running) renderStatic();
+  }
+
+  // ---- scroll fade: route lives in the hero and fades out; motes ease to a
+  //      faint ambient level so they whisper on behind the rest of the page ----
+  let routeFade = 1, moteFade = 1;
+  function smooth(a, b, x) {
+    const t = Math.min(Math.max((x - a) / (b - a), 0), 1);
+    return t * t * (3 - 2 * t);
+  }
+  function applyFade() {
+    const hp = Math.min((window.scrollY || window.pageYOffset || 0) / (heroH * 0.85), 1);
+    routeFade = 1 - smooth(0, 0.5, hp);   // route gone by ~half a screen down
+    moteFade = 1 - 0.62 * smooth(0, 1, hp); // motes ease to ~0.38 over content
   }
 
   // ---- parallax (desktop pointer only; touch keeps the autonomous drift) ----
@@ -230,6 +245,16 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 
   function renderOnce() { renderer.render(scene, camera); }
 
+  // Static (paused / reduced-motion) draw — fade-aware, no breathing or drift.
+  function renderStatic() {
+    applyFade();
+    nodeMat.uniforms.uOpacity.value = 0.85 * routeFade;
+    lineMat.opacity = 0.40 * routeFade;
+    travMat.uniforms.uOpacity.value = routeFade;
+    moteMat.uniforms.uOpacity.value = moteFade;
+    renderer.render(scene, camera);
+  }
+
   function frame() {
     rafId = requestAnimationFrame(frame);
     const dt = Math.min(clock.getDelta(), 0.05);
@@ -246,9 +271,14 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     }
     moteGeo.attributes.position.needsUpdate = true;
 
+    // scroll fade: route anchored to the hero, motes faint over the rest
+    applyFade();
+
     // breathe the route, glide the traveller
-    nodeMat.uniforms.uOpacity.value = 0.80 + 0.14 * Math.sin(tAccum * 0.9);
-    lineMat.opacity = 0.34 + 0.10 * Math.sin(tAccum * 0.9 + 0.4);
+    nodeMat.uniforms.uOpacity.value = (0.80 + 0.14 * Math.sin(tAccum * 0.9)) * routeFade;
+    lineMat.opacity = (0.34 + 0.10 * Math.sin(tAccum * 0.9 + 0.4)) * routeFade;
+    travMat.uniforms.uOpacity.value = routeFade;
+    moteMat.uniforms.uOpacity.value = moteFade;
     const tri = 1 - Math.abs(((tAccum / TRAVEL_PERIOD) % 2) - 1); // 0→1→0
     setTraveller(tri);
 
@@ -270,37 +300,31 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     cancelAnimationFrame(rafId);
   }
 
-  // ---- lifecycle: only run while the hero is on-screen and the tab is visible ----
-  let heroVisible = true;
+  // ---- lifecycle: animate whenever the tab is visible (the layer now spans the
+  //      whole page), pausing only when the tab is hidden to spare the battery ----
   function sync() {
     if (reduceMotion) return;
-    if (heroVisible && !document.hidden) start(); else stop();
+    if (!document.hidden) start(); else stop();
   }
 
   resize();
   setTraveller(0);
-  renderOnce();
+  renderStatic();
   canvas.classList.add('is-ready');
 
   if (reduceMotion) {
-    // Static single frame: settle the route to a mid pose and leave it.
-    nodeMat.uniforms.uOpacity.value = 0.85;
-    renderOnce();
+    // No animation; the scroll handler keeps the fade in step as you read.
+    let queued = false;
+    window.addEventListener('scroll', () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; renderStatic(); });
+    }, { passive: true });
   } else {
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver((entries) => {
-        heroVisible = entries[0].isIntersecting;
-        sync();
-      }, { threshold: 0 });
-      io.observe(hero);
-    }
     document.addEventListener('visibilitychange', sync);
     sync();
   }
 
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(resize).observe(hero);
-  } else {
-    window.addEventListener('resize', resize);
-  }
+  window.addEventListener('resize', resize, { passive: true });
+  window.addEventListener('orientationchange', resize, { passive: true });
 })();
