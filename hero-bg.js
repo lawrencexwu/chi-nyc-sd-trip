@@ -199,28 +199,93 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   glowGeo.setAttribute('aColor', new THREE.BufferAttribute(gColor, 3));
   field.add(new THREE.Points(glowGeo, glowMat));
 
+  // ---- scatter sparks: the impact bursts into a few small gold particles that
+  //      fly outward, decelerate and dissolve into the paper (a soft, small
+  //      "explosion" that fades into the background). Reuses the feathered
+  //      glow shader and a small round-robin pool. ----
+  const SPARK_POOL = 84;
+  const SPARKS_PER = 12;
+  const spPos = new Float32Array(SPARK_POOL * 3);
+  const spSize = new Float32Array(SPARK_POOL);
+  const spAlpha = new Float32Array(SPARK_POOL);
+  const spColor = new Float32Array(SPARK_POOL * 3);
+  const spVel = new Float32Array(SPARK_POOL * 2);
+  const spAge = new Float32Array(SPARK_POOL).fill(999);
+  const spLife = new Float32Array(SPARK_POOL).fill(1);
+  const spBase = new Float32Array(SPARK_POOL);
+  let sparkHead = 0;
+  const sparkGeo = new THREE.BufferGeometry();
+  sparkGeo.setAttribute('position', new THREE.BufferAttribute(spPos, 3));
+  sparkGeo.setAttribute('aSize', new THREE.BufferAttribute(spSize, 1));
+  sparkGeo.setAttribute('aAlpha', new THREE.BufferAttribute(spAlpha, 1));
+  sparkGeo.setAttribute('aColor', new THREE.BufferAttribute(spColor, 3));
+  const sparkMat = new THREE.ShaderMaterial({
+    uniforms: { uScale: { value: 1 }, uOpacity: { value: 1 } },
+    vertexShader: VERT, fragmentShader: GLOW_FRAG,
+    transparent: true, depthTest: false, depthWrite: false,
+    blending: THREE.NormalBlending,
+  });
+  field.add(new THREE.Points(sparkGeo, sparkMat));
+
+  const sparkHues = [COLORS.gold, COLORS.ochre, COLORS.clay];
+  function spawnBurst(cx, cy) {
+    for (let k = 0; k < SPARKS_PER; k++) {
+      const s = sparkHead; sparkHead = (sparkHead + 1) % SPARK_POOL;
+      const ang = Math.random() * Math.PI * 2;
+      const spd = rand(0.05, 0.20);
+      spPos[s * 3] = cx; spPos[s * 3 + 1] = cy; spPos[s * 3 + 2] = 0;
+      spVel[s * 2] = Math.cos(ang) * spd;
+      spVel[s * 2 + 1] = Math.sin(ang) * spd;
+      spAge[s] = 0;
+      spLife[s] = rand(0.55, 1.15);
+      spBase[s] = rand(0.5, 0.92);
+      spSize[s] = rand(2.4, 5.6);
+      const c = sparkHues[(Math.random() * sparkHues.length) | 0];
+      spColor[s * 3] = c.r; spColor[s * 3 + 1] = c.g; spColor[s * 3 + 2] = c.b;
+    }
+    sparkGeo.attributes.aColor.needsUpdate = true;
+  }
+  function updateSparks(dt) {
+    for (let s = 0; s < SPARK_POOL; s++) {
+      if (spAge[s] >= spLife[s]) { if (spAlpha[s] !== 0) spAlpha[s] = 0; continue; }
+      spAge[s] += dt;
+      const k = Math.min(spAge[s] / spLife[s], 1);
+      spVel[s * 2] *= (1 - 2.4 * dt);          // decelerate outward
+      spVel[s * 2 + 1] *= (1 - 2.4 * dt);
+      spPos[s * 3] += spVel[s * 2] * dt;
+      spPos[s * 3 + 1] += spVel[s * 2 + 1] * dt;
+      spAlpha[s] = spBase[s] * Math.pow(1 - k, 1.5) * routeFade; // dissolve smoothly
+      spSize[s] *= (1 - 0.35 * dt);            // gently shrink as it fades
+    }
+    sparkGeo.attributes.position.needsUpdate = true;
+    sparkGeo.attributes.aAlpha.needsUpdate = true;
+    sparkGeo.attributes.aSize.needsUpdate = true;
+  }
+
   // glow state: time since last spark per node (large = idle), plus a re-arm
   // flag so a single pass triggers one spark, in either travel direction.
   const nodeGlowT = new Float32Array(NODES).fill(999);
   const nodeArmed = new Array(NODES).fill(true);
   let travX = 0, travY = 0;
   function glowEnv(t) {
-    if (t >= 2.4) return 0;
-    const attack = 0.12;
-    if (t < attack) return t / attack;        // quick, smooth rise to full
-    return Math.exp(-(t - attack) / 0.55);     // slow, smooth fade
+    if (t >= 1.2) return 0;
+    const attack = 0.06;
+    if (t < attack) return t / attack;         // near-instant soft rise on impact
+    return Math.exp(-(t - attack) / 0.28);      // quick, smooth fall
   }
   function updateGlows(dt) {
-    const HIT = 0.05;
+    const HIT = 0.045;
     for (let i = 0; i < NODES; i++) {
       const dx = travX - nPos[i * 3], dy = travY - nPos[i * 3 + 1];
       const d = Math.hypot(dx, dy);
-      if (d < HIT && nodeArmed[i]) { nodeGlowT[i] = 0; nodeArmed[i] = false; }
-      else if (d > HIT * 1.8) { nodeArmed[i] = true; }
+      if (d < HIT && nodeArmed[i]) {
+        nodeGlowT[i] = 0; nodeArmed[i] = false;
+        spawnBurst(nPos[i * 3], nPos[i * 3 + 1]); // burst on contact
+      } else if (d > HIT * 1.8) { nodeArmed[i] = true; }
       nodeGlowT[i] = Math.min(nodeGlowT[i] + dt, 999);
       const e = glowEnv(nodeGlowT[i]);
-      gAlpha[i] = e * 0.85 * routeFade;
-      gSize[i] = 22 + 60 * e;                  // expands as it blooms
+      gAlpha[i] = e * 0.7 * routeFade;
+      gSize[i] = 16 + 30 * e;                   // a small soft flash, not a big bloom
     }
     glowGeo.attributes.aAlpha.needsUpdate = true;
     glowGeo.attributes.aSize.needsUpdate = true;
@@ -278,6 +343,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     nodeMat.uniforms.uScale.value = dpr;
     travMat.uniforms.uScale.value = dpr;
     glowMat.uniforms.uScale.value = dpr;
+    sparkMat.uniforms.uScale.value = dpr;
     heroH = Math.max(1, hero.clientHeight);
     layoutNodes();
     if (!running) renderStatic();
@@ -318,8 +384,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     lineMat.opacity = 0.40 * routeFade;
     travMat.uniforms.uOpacity.value = routeFade;
     moteMat.uniforms.uOpacity.value = moteFade;
-    for (let i = 0; i < NODES; i++) gAlpha[i] = 0; // no sparks in a static frame
+    for (let i = 0; i < NODES; i++) gAlpha[i] = 0; // no flash/sparks in a static frame
     glowGeo.attributes.aAlpha.needsUpdate = true;
+    for (let s = 0; s < SPARK_POOL; s++) spAlpha[s] = 0;
+    sparkGeo.attributes.aAlpha.needsUpdate = true;
     renderer.render(scene, camera);
   }
 
@@ -350,8 +418,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     const tri = 1 - Math.abs(((tAccum / TRAVEL_PERIOD) % 2) - 1); // 0→1→0
     setTraveller(tri);
 
-    // golden spark when the traveller meets a node
+    // golden spark + scatter burst when the traveller meets a node
     updateGlows(dt);
+    updateSparks(dt);
 
     // ease parallax
     field.position.x += (targetX - field.position.x) * 0.05;
