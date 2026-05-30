@@ -100,8 +100,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     mPos[i * 3] = rand(-1.6, 1.6);
     mPos[i * 3 + 1] = rand(-1, 1);
     mPos[i * 3 + 2] = 0;
-    mSize[i] = rand(1.4, 4.2);
-    mAlpha[i] = rand(0.10, 0.34);
+    mSize[i] = rand(1.8, 5.0);
+    mAlpha[i] = rand(0.16, 0.46);
     const c = moteColors[(Math.random() * moteColors.length) | 0];
     mColor[i * 3] = c.r; mColor[i * 3 + 1] = c.g; mColor[i * 3 + 2] = c.b;
     mVel[i * 2] = rand(-0.018, 0.018);
@@ -124,8 +124,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   const nAlpha = new Float32Array(NODES);
   const nColor = new Float32Array(NODES * 3);
   for (let i = 0; i < NODES; i++) {
-    nSize[i] = 6.0;
-    nAlpha[i] = 0.85;
+    nSize[i] = 7.5;
+    nAlpha[i] = 0.92;
     const c = i % 2 === 0 ? COLORS.clay : COLORS.clayDeep;
     nColor[i * 3] = c.r; nColor[i * 3 + 1] = c.g; nColor[i * 3 + 2] = c.b;
   }
@@ -134,20 +134,20 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   nodeGeo.setAttribute('aSize', new THREE.BufferAttribute(nSize, 1));
   nodeGeo.setAttribute('aAlpha', new THREE.BufferAttribute(nAlpha, 1));
   nodeGeo.setAttribute('aColor', new THREE.BufferAttribute(nColor, 3));
-  const nodeMat = pointsMaterial(0.7);
+  const nodeMat = pointsMaterial(0.85);
   field.add(new THREE.Points(nodeGeo, nodeMat));
 
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(NODES * 3), 3));
   const lineMat = new THREE.LineBasicMaterial({
-    color: COLORS.inkMute, transparent: true, opacity: 0.22,
+    color: COLORS.inkMute, transparent: true, opacity: 0.40,
   });
   field.add(new THREE.Line(lineGeo, lineMat));
 
   // ---- traveller (a soft halo + a brighter core that glides the route) ----
   const tPos = new Float32Array(2 * 3);
-  const tSize = new Float32Array([14.0, 5.0]);
-  const tAlpha = new Float32Array([0.16, 0.95]);
+  const tSize = new Float32Array([16.0, 6.5]);
+  const tAlpha = new Float32Array([0.22, 0.95]);
   const tColor = new Float32Array(2 * 3);
   for (let i = 0; i < 2; i++) {
     tColor[i * 3] = COLORS.clay.r; tColor[i * 3 + 1] = COLORS.clay.g; tColor[i * 3 + 2] = COLORS.clay.b;
@@ -247,8 +247,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     moteGeo.attributes.position.needsUpdate = true;
 
     // breathe the route, glide the traveller
-    nodeMat.uniforms.uOpacity.value = 0.62 + 0.16 * Math.sin(tAccum * 0.9);
-    lineMat.opacity = 0.18 + 0.08 * Math.sin(tAccum * 0.9 + 0.4);
+    nodeMat.uniforms.uOpacity.value = 0.80 + 0.14 * Math.sin(tAccum * 0.9);
+    lineMat.opacity = 0.34 + 0.10 * Math.sin(tAccum * 0.9 + 0.4);
     const tri = 1 - Math.abs(((tAccum / TRAVEL_PERIOD) % 2) - 1); // 0→1→0
     setTraveller(tri);
 
@@ -284,7 +284,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
 
   if (reduceMotion) {
     // Static single frame: settle the route to a mid pose and leave it.
-    nodeMat.uniforms.uOpacity.value = 0.7;
+    nodeMat.uniforms.uOpacity.value = 0.85;
     renderOnce();
   } else {
     if ('IntersectionObserver' in window) {
