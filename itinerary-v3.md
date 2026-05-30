@@ -53,8 +53,8 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 ### Fri · 6/12
 
 - **11:00 AM** — Art Institute of Chicago
-- **1:00 PM** — Girl & the Goat
-- **2:30 PM** — Millennium Park
+- **12:30 PM** — Millennium Park — Cloud Gate *(across the street from the Art Institute)*
+- **1:00 PM** — Girl & the Goat *(West Loop — on the way south to the ballpark)*
 - **4:30 PM** — Depart for Rate Field
 - **6:40 PM** — Dodgers @ White Sox, Rate Field *(first pitch 6:40 PM confirmed)*
 
@@ -89,8 +89,8 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 
 - **10:15 AM** — Met tour with Kate (3 hrs) → ends **1:15 PM** *(Raphael on view)*
 - **1:30 PM** — Lunch *(ask Kate for a nearby rec)*
-- **2:30 PM** — Central Park horse carriage (55 min · departs 59th & 7th) — `[ ] book`
-- **4:00 PM** — Madison Avenue shopping / walk
+- **2:30 PM** — Madison Avenue shopping / walk (UES, 60s–70s)
+- **4:00 PM** — Central Park horse carriage (55 min · departs 59th & 7th) — late-afternoon light — `[ ] book`
 - **6:00 PM** — Catch-up with Changhyun — `[ ] confirm with him`
 - **7:30 PM** — Top of the Rock VIP (sunset 8:30 PM, linger through blue hour) — *droppable*
 - **8:30 PM** — Dinner
@@ -159,9 +159,9 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 ### Mon · 6/22
 
 - **Morning** — Check out Georgian, luggage in car all day
-- Beverly Hills
-- Brunch
-- `?` — open afternoon slot — *suggested fill: Felix Trattoria, Abbot Kinney, Venice (Resy rolling window — see "Suggestions")*
+- **Morning** — Abbot Kinney / Venice *(right next to Santa Monica)* — optional late brunch at Felix Trattoria *(Resy rolling window — see "Suggestions")*
+- **Midday** — Beverly Hills
+- `?` — open afternoon / relax
 - **5:00 PM** — K-town dinner · Park's BBQ
 - **9:30 PM** — Depart for airport *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car.)*
 
@@ -186,6 +186,9 @@ These were live options earlier and remain easy to slot in if you change your mi
 
 **This round (applied):**
 
+- **6/12 reorder (geographic):** Art Institute → Millennium Park (across the street) → Girl & the Goat (West Loop) → Rate Field, cutting the Michigan Ave ↔ West Loop backtrack.
+- **6/15 reorder (geographic):** Madison Ave before the carriage, for a clean north→south run (Met → Madison → carriage → Top of the Rock).
+- **6/22 reorder (geographic):** Venice / Abbot Kinney first thing (next to Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
 - **6/17 routing:** confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.
 - **6/13 Au Cheval:** pulled to 11:00 AM (open time, queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.
 - **6/11 360 Chicago:** moved 8 PM → 7:00 PM to catch pre-sunset bright + sunset + blue hour per cousin's tip.
@@ -206,7 +209,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **6/16 ballet → MoMA:** UES 92nd to MoMA 53rd is ~15–20 min by cab, leave promptly.
 - **6/16 9/11 Museum timing:** 2:30 PM entry with ~2 hrs inside puts you out by 4:30, then UES/Midtown → West Village for Via Carota at 5:30 is fine.
 - **Via Carota** runs walk-in-heavy; confirm reservations before counting on the slot.
-- **6/20 same-day triple** (NASCAR 2 PM → hotel switch 5 PM → KSON 7 PM): logistics OK now that KSON venue is confirmed walking distance from Andaz, but lock NASCAR start/end times — a 4 PM session end at Naval Base Coronado + bridge crossing eats your hotel-switch buffer.
+- **6/20 same-day flow** (NASCAR 2 PM → hotel switch 5 PM → KSON 7 PM): comfortable — watch NASCAR ~2 hrs, back by ~4:30, switch to the Andaz by 5 with time to rest or eat, then KSON at 7 is a 10-min walk away (no need to arrive on the dot).
 - **6/21 sequence:** Uber to Griffith from Santa Monica is 45–60 min Sunday afternoon. 6:30 PM departure puts you there ~7:30, in line for parking lot/security ~7:45, on the lawn for sunset 8:08 PM — workable but no slack.
 
 ---
@@ -223,8 +226,8 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] Paris Bar reservation · 6/17 6:45 PM
 - [ ] James Beard Media Awards · 6/13 7 PM
 - [ ] Andaz San Diego · 6/20 (1 night)
-- [ ] KSON Countryfest tickets · 6/20 7 PM
-- [ ] NASCAR tickets · 6/20 (confirm session time)
+- [ ] KSON Countryfest tickets · 6/20 7 PM — committed, awaiting tickets
+- [ ] NASCAR tickets · 6/20 — committed, awaiting tickets (confirm session time)
 
 **Tier 2 — within 1–2 weeks:**
 - [ ] Architecture boat tour · 6/11 10 AM
