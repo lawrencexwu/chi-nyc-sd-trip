@@ -43,7 +43,9 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     ochre:   new THREE.Color('#a98545'),
     clay:    new THREE.Color('#b35a3a'),
     clayDeep:new THREE.Color('#8c4329'),
-    gold:    new THREE.Color('#c79a3c'),
+    gold:    new THREE.Color('#f0bb1d'),
+    goldLite:new THREE.Color('#f7d65e'),
+    goldDeep:new THREE.Color('#dca017'),
   };
   const moteColors = [COLORS.inkMute, COLORS.ochre, COLORS.clay, COLORS.clayDeep];
 
@@ -227,19 +229,19 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   });
   field.add(new THREE.Points(sparkGeo, sparkMat));
 
-  const sparkHues = [COLORS.gold, COLORS.ochre, COLORS.clay];
+  const sparkHues = [COLORS.gold, COLORS.goldLite, COLORS.goldDeep];
   function spawnBurst(cx, cy) {
     for (let k = 0; k < SPARKS_PER; k++) {
       const s = sparkHead; sparkHead = (sparkHead + 1) % SPARK_POOL;
       const ang = Math.random() * Math.PI * 2;
-      const spd = rand(0.05, 0.20);
+      const spd = rand(0.08, 0.28);
       spPos[s * 3] = cx; spPos[s * 3 + 1] = cy; spPos[s * 3 + 2] = 0;
       spVel[s * 2] = Math.cos(ang) * spd;
       spVel[s * 2 + 1] = Math.sin(ang) * spd;
       spAge[s] = 0;
-      spLife[s] = rand(0.55, 1.15);
-      spBase[s] = rand(0.5, 0.92);
-      spSize[s] = rand(2.4, 5.6);
+      spLife[s] = rand(0.6, 1.25);
+      spBase[s] = rand(0.55, 0.95);
+      spSize[s] = rand(6.0, 13.0);
       const c = sparkHues[(Math.random() * sparkHues.length) | 0];
       spColor[s * 3] = c.r; spColor[s * 3 + 1] = c.g; spColor[s * 3 + 2] = c.b;
     }
@@ -266,6 +268,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
   // flag so a single pass triggers one spark, in either travel direction.
   const nodeGlowT = new Float32Array(NODES).fill(999);
   const nodeArmed = new Array(NODES).fill(true);
+  const nodePrevD = new Float32Array(NODES).fill(999);
   let travX = 0, travY = 0;
   function glowEnv(t) {
     if (t >= 1.2) return 0;
@@ -274,18 +277,21 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.m
     return Math.exp(-(t - attack) / 0.28);      // quick, smooth fall
   }
   function updateGlows(dt) {
-    const HIT = 0.045;
+    const NEAR = 0.14; // only counts as a node pass within this radius
     for (let i = 0; i < NODES; i++) {
       const dx = travX - nPos[i * 3], dy = travY - nPos[i * 3 + 1];
       const d = Math.hypot(dx, dy);
-      if (d < HIT && nodeArmed[i]) {
+      // fire at the closest-approach point (distance stops decreasing) so the
+      // spark lands exactly on the node rather than when it enters a radius
+      if (nodeArmed[i] && nodePrevD[i] < NEAR && d > nodePrevD[i]) {
         nodeGlowT[i] = 0; nodeArmed[i] = false;
-        spawnBurst(nPos[i * 3], nPos[i * 3 + 1]); // burst on contact
-      } else if (d > HIT * 1.8) { nodeArmed[i] = true; }
+        spawnBurst(nPos[i * 3], nPos[i * 3 + 1]);
+      } else if (d > NEAR) { nodeArmed[i] = true; }
+      nodePrevD[i] = d;
       nodeGlowT[i] = Math.min(nodeGlowT[i] + dt, 999);
       const e = glowEnv(nodeGlowT[i]);
-      gAlpha[i] = e * 0.7 * routeFade;
-      gSize[i] = 16 + 30 * e;                   // a small soft flash, not a big bloom
+      gAlpha[i] = e * 0.72 * routeFade;
+      gSize[i] = 20 + 40 * e;                   // a soft flash that gives way to the burst
     }
     glowGeo.attributes.aAlpha.needsUpdate = true;
     glowGeo.attributes.aSize.needsUpdate = true;
