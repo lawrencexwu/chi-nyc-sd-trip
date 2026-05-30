@@ -55,7 +55,8 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:00 AM** — Art Institute of Chicago
 - **12:30 PM** — Millennium Park — Cloud Gate *(across the street from the Art Institute)*
 - **1:00 PM** — Girl & the Goat *(West Loop — on the way south to the ballpark)*
-- **4:30 PM** — Depart for Rate Field
+- **5:00 PM** — Depart for Rate Field
+- **5:30 PM** — Scout Seats club (VIP) — all-inclusive food & drink opens ~90 min before first pitch; arrive early for the perks
 - **6:40 PM** — Dodgers @ White Sox, Rate Field *(first pitch 6:40 PM confirmed)*
 
 ### Sat · 6/13
@@ -95,24 +96,23 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **7:30 PM** — Top of the Rock VIP (sunset 8:30 PM, linger through blue hour) — *droppable*
 - **8:30 PM** — Dinner
 
-### Tue · 6/16 — *Option B applied: 9/11 moved here*
+### Tue · 6/16 — *"Downtown day": UES → FiDi → SoHo → West Village → Midtown*
 
 - **9:15–10:45 AM** — Ballet Academy East · 1651 Third Ave (UES)
-- **11:00 AM** — MoMA (Midtown, 53rd St)
-- **1:00 PM** — Lunch (Midtown)
-- **2:30 PM** — [9/11 Memorial & Museum](https://www.911memorial.org/visit) (FiDi) — `[ ] timed entry QR code` · *last entry 5:30 PM; allow ~1.5–2 hrs*
-- **5:00 PM** — Head north toward West Village
+- **11:30 AM** — Brunch / head downtown
+- **1:00 PM** — [9/11 Memorial & Museum](https://www.911memorial.org/visit) (FiDi) — `[ ] timed entry QR code` · *allow ~1.5–2 hrs*
+- **3:30 PM** — Tibi + Theory · 120 Wooster St, SoHo
 - **5:30 PM** — Via Carota (West Village) — `[ ] reserve / confirm walk-in`
 - **7:00 PM** — *MJ the Musical*, Neil Simon Theatre (250 W 52nd St)
 
-### Wed · 6/17 — *Option B applied: clean north → south → back-to-Midtown for evening*
+### Wed · 6/17 — *"North day": UES → MoMA → SUMMIT → Midtown shows (no downtown detour)*
 
 - **9:00–10:30 AM** — Ballet Academy East (UES, ~92nd St) · *far north, start here*
-- **11:00 AM** — Brunch / drift south toward Midtown
+- **11:00 AM** — MoMA (Midtown, 53rd St) — drift south from the ballet
 - **1:00 PM** — One Vanderbilt · SUMMIT Premium (42nd & Vanderbilt) ✦ *fixed* — `[ ] print at home`
 - **2:15 PM** — Lunch near Grand Central
-- **3:30 PM** — Tibi + Theory · 120 Wooster St, SoHo
-- **5:30 PM** — Back to Midtown / hotel · freshen up
+- **3:30 PM** — *Open afternoon — Fifth Ave / Midtown stroll or rest*
+- **5:30 PM** — Back to hotel · freshen up
 - **6:45 PM** — [Paris Bar](https://www.parisbarnyc.com/) · 120 W 57th St (~5 min walk from Thompson)
 - **7:30 PM** — [The Masquerade](https://themasqueradeshow.com/) · 218 W 57th St (~7 min walk from Paris Bar)
 
@@ -150,16 +150,18 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:30 AM** — Check out hotel → Santa Fe Depot
 - **12:01 PM** — Surfliner 777 northbound · Business class, ocean-side right
 - **3:00 PM** — Arrive LA Union Station · Uber to The Georgian, Santa Monica
-- **4:00 PM** — Check in · drop bags
-- **4:30 PM** — Santa Monica Beach / Palisades Park bluffs
-- **6:30 PM** — Uber to Griffith Observatory *(~45–60 min on a Sunday)*
+- **4:00 PM** — Check in · drop bags · rest / freshen up
+- **6:00 PM** — Uber to Griffith Observatory *(~45–60 min on a Sunday)*
 - **8:00 PM** — Sunset at Griffith (sunset 8:08 PM)
-- **9:30 PM** — Dinner *(Los Feliz / Silver Lake on the way back, or back in Santa Monica)*
+- **9:30 PM** — Dinner east *(Los Feliz / Silver Lake), then back to the Georgian*
+
+*Santa Monica beach/bluffs moved to 6/22 morning, so 6/21 is a single evening run to Griffith.*
 
 ### Mon · 6/22
 
 - **Morning** — Check out Georgian, luggage in car all day
-- **Morning** — Abbot Kinney / Venice *(right next to Santa Monica)* — optional late brunch at Felix Trattoria *(Resy rolling window — see "Suggestions")*
+- **Morning** — Santa Monica Beach / Palisades Park bluffs *(right by the hotel)*
+- **Late morning** — Abbot Kinney / Venice *(right next to Santa Monica)* — optional late brunch at Felix Trattoria *(Resy rolling window — see "Suggestions")*
 - **Midday** — Beverly Hills
 - `?` — open afternoon / relax
 - **5:00 PM** — K-town dinner · Park's BBQ
@@ -189,6 +191,9 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **6/12 reorder (geographic):** Art Institute → Millennium Park (across the street) → Girl & the Goat (West Loop) → Rate Field, cutting the Michigan Ave ↔ West Loop backtrack.
 - **6/15 reorder (geographic):** Madison Ave before the carriage, for a clean north→south run (Met → Madison → carriage → Top of the Rock).
 - **6/22 reorder (geographic):** Venice / Abbot Kinney first thing (next to Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
+- **6/12 Scout Seats:** White Sox VIP — depart 5:00 PM to arrive ~5:30 for the all-inclusive Scout Seats perks before first pitch.
+- **6/16–6/17 split:** combined the two downtown dives into one — 6/16 "downtown day" (9/11 + SoHo + Via Carota), 6/17 "north day" (MoMA + SUMMIT); MoMA and SoHo swapped days.
+- **6/21–6/22:** moved Santa Monica beach/bluffs to 6/22 morning (paired with Venice) so 6/21 is a single evening run to Griffith.
 - **6/17 routing:** confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.
 - **6/13 Au Cheval:** pulled to 11:00 AM (open time, queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.
 - **6/11 360 Chicago:** moved 8 PM → 7:00 PM to catch pre-sunset bright + sunset + blue hour per cousin's tip.
@@ -235,7 +240,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] Chicago Cut Steakhouse · 6/11 5 PM
 - [ ] Wildberry Café · 6/11 noon (walk-in usually fine on Thursday)
 - [ ] Girl & the Goat · 6/12 1 PM
-- [ ] White Sox vs. Dodgers tickets · 6/12 6:40 PM
+- [ ] White Sox vs. Dodgers — Scout Seats VIP · 6/12 (arrive ~5:30 for all-inclusive perks)
 - [ ] Via Carota · 6/16 5:30 PM
 - [ ] Art Smart tour with Christian · 6/18 11 AM
 - [ ] Another Side of San Diego · 6/19 9 AM
