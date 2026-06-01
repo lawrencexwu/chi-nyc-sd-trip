@@ -167,14 +167,14 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **Morning** — Check out Georgian, luggage in car all day
 - **Morning** — Santa Monica Beach / Palisades Park bluffs · Ocean Ave *(right by the hotel)*
 - **Late morning** — Abbot Kinney Blvd / Venice *(right next to Santa Monica)* — optional brunch at Felix Trattoria · 1023 Abbot Kinney Blvd *(Resy rolling window — see "Suggestions")*
-- **2:30 PM** — Getty Villa · 17985 Pacific Coast Hwy, Pacific Palisades *(free timed entry — book ahead; ~1.5 hrs; open Mon, closed Tue)*
+- **1:30 PM** — Getty Villa · 17985 Pacific Coast Hwy, Pacific Palisades *(free timed entry — book ahead; ~2 hrs; open Mon, closed Tue)*
 - **4:00 PM** — Beverly Hills · Rodeo Dr *(brief, en route east)*
 - **5:30 PM** — K-town dinner · Park's BBQ · 955 S Vermont Ave, Ste G
 - **7:30 PM** — Arrive Wi Spa · 2700 Wilshire Blvd, K-town *(open 24h; ~5 min from Park's)*
 - **8:00 PM** — 1-hour massage (reserved) — then hot/cold pools + sauna
 - **9:30 PM** — Depart Wi Spa for LAX *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car; EVA counters close 11:15 PM.)*
 
-*Getty Villa replaces the Eames House (no self-guided slot was available on these dates). It sits in the same Pacific Palisades pocket (west), done before the inland run to Beverly Hills and K-town — a clean west→east finish; reserve the free timed entry. Midday after Venice stays open/leisurely. The evening stays in K-town: dinner at Park's, then Wi Spa with an 8 PM one-hour massage — leave by ~9:30 PM (10:00 PM at the latest, counters close 11:15 PM).*
+*Getty Villa replaces the Eames House (no self-guided slot was available on these dates). At 1:30 PM it's a full ~2 hrs with comfortable buffer to Beverly Hills (~4:00) and Park's (5:30) — a clean west→east finish; reserve the free timed entry. Midday after Venice stays open for a light lunch. The evening stays in K-town: dinner at Park's, then Wi Spa with an 8 PM one-hour massage — leave by ~9:30 PM (10:00 PM at the latest, counters close 11:15 PM).*
 
 ### Tue · 6/23 — *LA → Taipei*
 
@@ -199,7 +199,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 
 - **Latest pass:** Top of the Rock dropped (6/15); 6/16 ballet → 10:00 AM (Basic Beginner, Marsha Knight, Studio 5); 6/17 ballet → 9:30 AM at Ballet Arts, 130 W 56th St (Beginners Intermediate, Joan Liu), MoMA nudged to 11:30; 6/11 CAC museum trimmed to a 15-min look; 6/14 Allis brunch 10:30 / Goose Island 12:00; 6/20 reworked (check out → lunch → NASCAR ~2:00–4:30 → collect bags → Andaz 5:00 → Gaslamp dinner → KSON 7:00); 6/21 relax in Santa Monica before the Bowl (leave ~5:15 PM); 6/22 Eames House → Getty Villa (no Eames slot on these dates), Beverly Hills 3:00, Wi Spa departure 9:45 PM. Street addresses added to every venue.
 - **Surfliner seat fixed:** northbound SD→LA, the ocean is on the **left**, not the right.
-- **Follow-ups:** Girl & the Goat → Little Goat Diner (lunch); 6/13 prep 4:30 PM; 6/14 depart hotel 1:30 PM; added Capezio Flagship Store (6/17, 3:30 PM); Getty Villa → 2:30 PM, Beverly Hills 4:00 PM; Wi Spa 8 PM one-hour massage, depart 9:30 PM. (6/20 confirmed as the Xfinity race.)
+- **Follow-ups:** Girl & the Goat → Little Goat Diner (lunch); 6/13 prep 4:30 PM; 6/14 depart hotel 1:30 PM; added Capezio Flagship Store (6/17, 3:30 PM); Getty Villa → 1:30 PM (full ~2 hrs), Beverly Hills 4:00 PM; Wi Spa 8 PM one-hour massage, depart 9:30 PM. (6/20 confirmed as the Xfinity race.)
 - **6/12 reorder (geographic):** Art Institute → Millennium Park (across the street) → Girl & the Goat (West Loop) → Rate Field, cutting the Michigan Ave ↔ West Loop backtrack.
 - **6/15 reorder (geographic):** Madison Ave before the carriage, for a clean north→south run (Met → Madison → carriage → dinner).
 - **6/22 reorder (geographic):** Venice / Abbot Kinney first thing (next to Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
@@ -230,7 +230,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - **Via Carota** runs walk-in-heavy; confirm reservations before counting on the slot.
 - **6/20 NASCAR** — Saturday is the Xfinity race; the Cup race is Sunday 6/21 (your LA-departure day). Lock the Saturday session time; Naval Base Coronado needs base access + the bridge return.
 - **6/21 evening** — relax in Santa Monica, then ~5:15 PM Uber to the Bowl (one east swing). Reggae Night ~7:00–8:45 PM; Griffith after (open Sun till 10 PM) — request the Uber down by ~9:40 PM.
-- **6/22 Getty Villa** — reserve the free timed entry (2:30 PM; open Mondays, closed Tuesdays). Wi Spa 8 PM massage; leave by ~9:30 PM (10:00 latest); EVA counters close 11:15 PM.
+- **6/22 Getty Villa** — reserve the free timed entry (1:30 PM, ~2 hrs; open Mondays, closed Tuesdays). Wi Spa 8 PM massage; leave by ~9:30 PM (10:00 latest); EVA counters close 11:15 PM.
 - **6/14 O'Hare buffer** — 2:00 PM car for a 4:00 PM flight is tight; consider leaving by ~1:30 PM.
 
 ---
@@ -250,7 +250,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] KSON Countryfest tickets · 6/20 7 PM — committed, awaiting tickets
 - [ ] NASCAR tickets · 6/20 — committed, awaiting tickets (confirm session time)
 - [ ] Reggae Night XXIV tickets · Hollywood Bowl · 6/21 7 PM
-- [ ] Getty Villa timed entry · 6/22 2:30 PM (free — reserve ahead; open Mon)
+- [ ] Getty Villa timed entry · 6/22 1:30 PM (free — reserve ahead; open Mon)
 - [x] Wi Spa 1-hour massage · 6/22 8 PM — reserved
 
 **Tier 2 — within 1–2 weeks:**
