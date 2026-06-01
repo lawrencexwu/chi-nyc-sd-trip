@@ -54,7 +54,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 
 - **11:00 AM** — Art Institute of Chicago · 111 S Michigan Ave
 - **12:30 PM** — Millennium Park — Cloud Gate · 201 E Randolph St *(across the street from the Art Institute)*
-- **1:00 PM** — Girl & the Goat · 809 W Randolph St (West Loop) *(dinner-only — for a 1 PM lunch use Little Goat Diner across the street, 820 W Randolph St)*
+- **1:00 PM** — Little Goat Diner · 820 W Randolph St (West Loop) — lunch *(Stephanie Izard's diner; Girl & the Goat next door is dinner-only)*
 - **5:00 PM** — Depart for Rate Field · 333 W 35th St
 - **5:30 PM** — Scout Seats club (VIP) — all-inclusive food & drink opens ~90 min before first pitch; arrive early for the perks
 - **6:40 PM** — Dodgers @ White Sox, Rate Field · 333 W 35th St *(first pitch 6:40 PM confirmed)*
@@ -64,7 +64,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:00 AM** — [Au Cheval](https://auchevalchicago.com/) · 800 W Randolph St — bone marrow + cheeseburger (queue by 10:30 AM, Saturday lines fill fast)
 - **1:30 PM** — [Andersonville Midsommarfest](https://www.starevents.com/event/andersonville-midsommarfest/) · N Clark St (Foster–Catalpa) (~25 min north; brief visit, no need to commit a full afternoon)
 - `?` — open late afternoon
-- **5:00 PM** — Hotel · prepare *(business attire / cocktail — Media Awards is not black-tie)*
+- **4:30 PM** — Hotel · prepare *(business attire / cocktail — Media Awards is not black-tie)*
 - **7:00 PM** — [James Beard Media Awards](https://www.jamesbeard.org/awards) · Art Institute of Chicago, 111 S Michigan Ave
 
 ### Sun · 6/14 — *Chicago → New York*
@@ -72,7 +72,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **10:30 AM** — The Allis (Soho House Chicago) · 113 N Green St — brunch
 - **12:00 PM** — Goose Island Taproom · 1800 W Fulton St
 - **1:00 PM** — Back to hotel
-- **2:00 PM** — Car to ORD
+- **1:30 PM** — Car to ORD
 - **4:00 PM** — United UA2124, ORD → LGA
 - **7:22 PM** — Arrive LGA · taxi to Thompson Central Park
 
@@ -110,7 +110,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:30 AM** — MoMA · 11 W 53rd St — a few blocks south of the ballet
 - **1:00 PM** — One Vanderbilt · SUMMIT Premium · 45 E 42nd St ✦ *fixed* — `[ ] print at home`
 - **2:15 PM** — Lunch near Grand Central
-- **3:30 PM** — *Open afternoon — Fifth Ave / Midtown stroll or rest*
+- **3:30 PM** — Capezio Flagship Store · 1650 Broadway at 51st St (2nd Fl) — dancewear *(Midtown; then Fifth Ave stroll / rest)*
 - **5:30 PM** — Back to hotel · freshen up
 - **6:45 PM** — [Paris Bar](https://www.parisbarnyc.com/) · 120 W 57th St (~5 min walk from Thompson)
 - **7:30 PM** — [The Masquerade](https://themasqueradeshow.com/) · 218 W 57th St (~7 min walk from Paris Bar)
@@ -167,13 +167,14 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **Morning** — Check out Georgian, luggage in car all day
 - **Morning** — Santa Monica Beach / Palisades Park bluffs · Ocean Ave *(right by the hotel)*
 - **Late morning** — Abbot Kinney Blvd / Venice *(right next to Santa Monica)* — optional brunch at Felix Trattoria · 1023 Abbot Kinney Blvd *(Resy rolling window — see "Suggestions")*
-- **12:30 PM** — Getty Villa · 17985 Pacific Coast Hwy, Pacific Palisades *(free timed entry — book ahead; ~2 hrs; open Mon, closed Tue)*
-- **3:00 PM** — Beverly Hills · Rodeo Dr *(brief, en route east)*
+- **2:30 PM** — Getty Villa · 17985 Pacific Coast Hwy, Pacific Palisades *(free timed entry — book ahead; ~1.5 hrs; open Mon, closed Tue)*
+- **4:00 PM** — Beverly Hills · Rodeo Dr *(brief, en route east)*
 - **5:30 PM** — K-town dinner · Park's BBQ · 955 S Vermont Ave, Ste G
-- **7:15 PM** — Korean spa · Wi Spa · 2700 Wilshire Blvd, K-town *(hot/cold pools + sauna — board the redeye fresh; open 24h, ~5 min from Park's)*
-- **9:45 PM** — Depart Wi Spa for LAX *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car; EVA counters close 11:15 PM.)*
+- **7:30 PM** — Arrive Wi Spa · 2700 Wilshire Blvd, K-town *(open 24h; ~5 min from Park's)*
+- **8:00 PM** — 1-hour massage (reserved) — then hot/cold pools + sauna
+- **9:30 PM** — Depart Wi Spa for LAX *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car; EVA counters close 11:15 PM.)*
 
-*Getty Villa replaces the Eames House (no self-guided slot was available on these dates). It sits in the same Pacific Palisades pocket (west), done before the inland run to Beverly Hills and K-town — a clean west→east finish; reserve the free timed entry. The evening stays in K-town: dinner at Park's, then a Korean spa before the midnight redeye — leave Wi Spa by ~9:45 PM (10:00 PM at the latest, counters close 11:15 PM).*
+*Getty Villa replaces the Eames House (no self-guided slot was available on these dates). It sits in the same Pacific Palisades pocket (west), done before the inland run to Beverly Hills and K-town — a clean west→east finish; reserve the free timed entry. Midday after Venice stays open/leisurely. The evening stays in K-town: dinner at Park's, then Wi Spa with an 8 PM one-hour massage — leave by ~9:30 PM (10:00 PM at the latest, counters close 11:15 PM).*
 
 ### Tue · 6/23 — *LA → Taipei*
 
@@ -198,6 +199,7 @@ These were live options earlier and remain easy to slot in if you change your mi
 
 - **Latest pass:** Top of the Rock dropped (6/15); 6/16 ballet → 10:00 AM (Basic Beginner, Marsha Knight, Studio 5); 6/17 ballet → 9:30 AM at Ballet Arts, 130 W 56th St (Beginners Intermediate, Joan Liu), MoMA nudged to 11:30; 6/11 CAC museum trimmed to a 15-min look; 6/14 Allis brunch 10:30 / Goose Island 12:00; 6/20 reworked (check out → lunch → NASCAR ~2:00–4:30 → collect bags → Andaz 5:00 → Gaslamp dinner → KSON 7:00); 6/21 relax in Santa Monica before the Bowl (leave ~5:15 PM); 6/22 Eames House → Getty Villa (no Eames slot on these dates), Beverly Hills 3:00, Wi Spa departure 9:45 PM. Street addresses added to every venue.
 - **Surfliner seat fixed:** northbound SD→LA, the ocean is on the **left**, not the right.
+- **Follow-ups:** Girl & the Goat → Little Goat Diner (lunch); 6/13 prep 4:30 PM; 6/14 depart hotel 1:30 PM; added Capezio Flagship Store (6/17, 3:30 PM); Getty Villa → 2:30 PM, Beverly Hills 4:00 PM; Wi Spa 8 PM one-hour massage, depart 9:30 PM. (6/20 confirmed as the Xfinity race.)
 - **6/12 reorder (geographic):** Art Institute → Millennium Park (across the street) → Girl & the Goat (West Loop) → Rate Field, cutting the Michigan Ave ↔ West Loop backtrack.
 - **6/15 reorder (geographic):** Madison Ave before the carriage, for a clean north→south run (Met → Madison → carriage → dinner).
 - **6/22 reorder (geographic):** Venice / Abbot Kinney first thing (next to Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
@@ -223,12 +225,12 @@ These were live options earlier and remain easy to slot in if you change your mi
 
 **Still open / lower-priority flags:**
 
-- **6/12 Girl & the Goat is dinner-only** (opens 4:30 PM) — for the 1 PM lunch use Little Goat Diner across the street (820 W Randolph St).
+- **6/12 lunch** — booked at Little Goat Diner (820 W Randolph St); Girl & the Goat next door is dinner-only.
 - **6/16 9/11 Museum** at 1:00 PM (ballet ends 11:30, brunch 12:00) — confirm the timed-entry slot; out by ~3:00, then SoHo → Via Carota at 5:30.
 - **Via Carota** runs walk-in-heavy; confirm reservations before counting on the slot.
 - **6/20 NASCAR** — Saturday is the Xfinity race; the Cup race is Sunday 6/21 (your LA-departure day). Lock the Saturday session time; Naval Base Coronado needs base access + the bridge return.
 - **6/21 evening** — relax in Santa Monica, then ~5:15 PM Uber to the Bowl (one east swing). Reggae Night ~7:00–8:45 PM; Griffith after (open Sun till 10 PM) — request the Uber down by ~9:40 PM.
-- **6/22 Getty Villa** — reserve the free timed entry (open Mondays, closed Tuesdays). Leave Wi Spa by ~9:45 PM (10:00 latest); EVA counters close 11:15 PM.
+- **6/22 Getty Villa** — reserve the free timed entry (2:30 PM; open Mondays, closed Tuesdays). Wi Spa 8 PM massage; leave by ~9:30 PM (10:00 latest); EVA counters close 11:15 PM.
 - **6/14 O'Hare buffer** — 2:00 PM car for a 4:00 PM flight is tight; consider leaving by ~1:30 PM.
 
 ---
@@ -248,14 +250,15 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] KSON Countryfest tickets · 6/20 7 PM — committed, awaiting tickets
 - [ ] NASCAR tickets · 6/20 — committed, awaiting tickets (confirm session time)
 - [ ] Reggae Night XXIV tickets · Hollywood Bowl · 6/21 7 PM
-- [ ] Getty Villa timed entry · 6/22 12:30 PM (free — reserve ahead; open Mon)
+- [ ] Getty Villa timed entry · 6/22 2:30 PM (free — reserve ahead; open Mon)
+- [x] Wi Spa 1-hour massage · 6/22 8 PM — reserved
 
 **Tier 2 — within 1–2 weeks:**
 - [ ] Architecture boat tour · 6/11 10 AM
 - [ ] 360 Chicago timed entry · 6/11 7 PM
 - [ ] Chicago Cut Steakhouse · 6/11 5 PM
 - [ ] Wildberry Café · 6/11 noon (walk-in usually fine on Thursday)
-- [ ] 6/12 1 PM lunch near the ballpark — Girl & the Goat is dinner-only, so book Little Goat Diner (820 W Randolph St) instead
+- [ ] Little Goat Diner (lunch) · 6/12 1 PM · 820 W Randolph St
 - [ ] White Sox vs. Dodgers — Scout Seats VIP · 6/12 (arrive ~5:30 for all-inclusive perks)
 - [ ] Via Carota · 6/16 5:30 PM
 - [ ] Art Smart tour with Christian · 6/18 11 AM
