@@ -128,7 +128,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 ### Fri · 6/19
 
 - **9:00 AM–1:00 PM** — Another Side of San Diego · 4-hour tour
-- `?` — afternoon — *suggested fill: 3-hour blue whale watching tour from Broadway Pier (peak season, see "Suggestions" below)*
+- `?` — afternoon — open (food tour / beach / rest)
 - **5:00 PM** — `?` food tour / beach
 
 ### Sat · 6/20
@@ -181,40 +181,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 
 ---
 
-## 💡 Suggestions to consider
-
-These were live options earlier and remain easy to slot in if you change your mind:
-
-- **Blue whale watching** — 3-hour tour from Broadway Pier · 1000 N Harbor Dr on the Embarcadero (walking distance from Manchester Grand Hyatt). Operators: [San Diego Whale Watch](https://www.sdwhalewatch.com/) or [Hornblower](https://www.hornblower.com/sd/cruise/whale-watching-cruise-from-san-diego/). Peak season for blue whales (largest animals ever to live on Earth) is June–September. Natural fit for the 6/19 afternoon `?` slot or as a replacement for the Another Side tour if you want water over land.
-- **Second City Mainstage** — Thursday 6/11 8:00 PM. Birthplace of improv per cousin. Currently dropped from the day; could be added after 360 Chicago (show ends ~9:30 PM, walkable back to hotel area).
-
----
-
 ## 🔧 Changes & flags
-
-**This round (applied):**
-
-- **Latest pass:** Top of the Rock dropped (6/15); 6/16 ballet → 10:00 AM (Basic Beginner, Marsha Knight, Studio 5); 6/17 ballet → 9:30 AM at Ballet Arts, 130 W 56th St (Beginners Intermediate, Joan Liu), MoMA nudged to 11:30; 6/11 CAC museum trimmed to a 15-min look; 6/14 Allis brunch 10:30 / Goose Island 12:00; 6/20 reworked (check out → lunch → NASCAR ~2:00–4:30 → collect bags → Andaz 5:00 → Gaslamp dinner → KSON 7:00); 6/21 relax in Santa Monica before the Bowl (leave ~5:15 PM); 6/22 Eames House → Getty Villa (no Eames slot on these dates), Beverly Hills 3:00, Wi Spa departure 9:45 PM. Street addresses added to every venue.
-- **Surfliner seat fixed:** northbound SD→LA, the ocean is on the **left**, not the right.
-- **Follow-ups:** Girl & the Goat → Little Goat Diner (lunch); 6/13 prep 4:30 PM; 6/14 depart hotel 1:30 PM; added Capezio Flagship Store (6/17, 3:30 PM); Getty Villa → 1:30 PM (full ~2 hrs), Beverly Hills 4:00 PM; Wi Spa 8 PM one-hour massage, depart 9:30 PM. (6/20 confirmed as the Xfinity race.)
-- **Follow-ups (2):** dropped Second City + the 96th-floor Signature Lounge note; 360 Chicago → 7:30 PM; Au Cheval → 11:30 AM; 6/14 NYC dinner marked TBD; Central Park carriage → 4:30 PM VIP tour (3 photo stops, 65 min, NYC Horse Carriage Rides Co., start 180 Central Park South); Changhyun is now dinner at Smith & Wollensky (797 Third Ave, 6 PM); removed all Felix Trattoria mentions; 6/22 late-morning Abbot Kinney/Venice replaced with a Water Grill lunch (1401 Ocean Ave).
-- **6/12 reorder (geographic):** Art Institute → Millennium Park (across the street) → Girl & the Goat (West Loop) → Rate Field, cutting the Michigan Ave ↔ West Loop backtrack.
-- **6/15 reorder (geographic):** Madison Ave before the carriage, for a clean north→south run (Met → Madison → carriage → dinner).
-- **6/22 reorder (geographic):** west-side stops first (Santa Monica) before heading inland to Beverly Hills, avoiding a round-trip back west.
-- **6/12 Scout Seats:** White Sox VIP — depart 5:00 PM to arrive ~5:30 for the all-inclusive Scout Seats perks before first pitch.
-- **6/16–6/17 split:** combined the two downtown dives into one — 6/16 "downtown day" (9/11 + SoHo + Via Carota), 6/17 "north day" (MoMA + SUMMIT); MoMA and SoHo swapped days.
-- **6/21 Reggae Night added:** Hollywood Bowl Reggae Night XXIV (Ziggy Marley + Burning Spear, 7 PM) added to the 6/21 evening. Sequenced early dinner → concert → Griffith — the Bowl and Griffith are ~10 min apart in the same hills, so Griffith stays (night city-lights view instead of the 8:08 PM sunset, since you're at the Bowl for it).
-- **6/22 Getty Villa (was Eames House):** the Eames House had no self-guided slot on these dates, so the midday Pacific Palisades stop is now the Getty Villa (12:30 PM, free timed entry) — same west-side position, keeping a clean west→east run; Park's BBQ at 5:30 PM.
-- **6/22 evening filled:** the ~2.5-hour dead stretch between dinner and the airport is now a Korean spa (Wi Spa, K-town, ~5 min from Park's) — soak/shower before the midnight redeye.
-- **6/21–6/22:** moved Santa Monica beach/bluffs to 6/22 morning so 6/21 frees up for the evening Hollywood run.
-- **6/17 routing:** confirmed Option B since Paris Bar (120 W 57th) and Masquerade (218 W 57th) are both Midtown, ~5 min walk from Thompson. Moved 9/11 Museum to 6/16 afternoon; 6/17 now flows UES → Midtown → SoHo → back to Midtown for the evening, no FiDi detour.
-- **6/13 Au Cheval:** at 11:30 AM (queue by 10:30); Midsommarfest pushed to 1:30 PM with shorter stay.
-- **6/11 360 Chicago:** moved 8 PM → 7:00 PM to catch pre-sunset bright + sunset + blue hour per cousin's tip.
-- **6/13 dress:** Media Awards = business attire / cocktail, not black-tie.
-- **6/19 boat slot:** marked `?` with whale watching as a suggested fill in the side panel.
-- **6/22 luggage:** confirmed travels with you all day; K-town → LAX direct after dinner.
-- **6/21 Griffith:** Uber confirmed (skip the parking nightmare).
-- **Flight numbers added:** UA1626 EWR→SAN was TBD; Surfliner LA Union arrival 3:00 PM was blank.
 
 **Verified facts (from your prior notes, still good):**
 
@@ -264,7 +231,6 @@ These were live options earlier and remain easy to slot in if you change your mi
 - [ ] Park's BBQ · 6/22 5:30 PM
 
 **Day-of decisions:**
-- [ ] Blue whale watching 6/19 PM — add back or skip
 - [ ] 6/13 late afternoon `?` slot
 - [ ] 6/18 3 PM `?` slot
 - [ ] 6/19 5 PM `?` food tour / beach
