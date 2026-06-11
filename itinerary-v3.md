@@ -36,42 +36,44 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 ### Wed · 6/10
 
 - **9:00 PM** — TPE → ORD, EVA BR056 Royal Laurel · arrive ORD **9:00 PM**
-- Hotel check-in (~10:00–10:30 PM)
+- Blacklane pickup → hotel check-in (~10:00–10:30 PM)
 - **11:00 PM** — [Green Mill Jazz Club](https://greenmilljazz.com/) · 4802 N Broadway (Uptown, ~20 min cab; cousin's pick — "small, cozy, intimate")
 
 ### Thu · 6/11
 
 - **10:00 AM** — Chicago Architecture Center · 111 E Wacker Dr — architectural boat tour
 - **11:30 AM** — CAC museum · 111 E Wacker Dr *(quick 15-min look)*
-- **12:00 PM** — Wildberry Pancakes and Cafe · 196 E Pearson St — brunch
+- **12:00 PM** — Brunch — TBD
 - **1:00 PM** — Magnificent Mile shopping (N Michigan Ave)
 - `?` — open afternoon slot
-- **5:00 PM** — Chicago Cut Steakhouse · 300 N LaSalle Dr — dinner
+- **5:00 PM** — Dinner — TBD
 - **7:30 PM** — [360 Chicago observatory](https://360chicago.com/) · 875 N Michigan Ave *(formerly Hancock Observatory)* — arrive while still bright, stay through sunset (~8:25 PM) and into blue hour.
+- **8:30 PM** — Meet up with the Stcavish crew
 
 ### Fri · 6/12
 
-- **11:00 AM** — Art Institute of Chicago · 111 S Michigan Ave
-- **12:30 PM** — Millennium Park — Cloud Gate · 201 E Randolph St *(across the street from the Art Institute)*
-- **1:00 PM** — Little Goat Diner · 820 W Randolph St (West Loop) — lunch
+- **10:00 AM** — Art Institute of Chicago · 111 S Michigan Ave
+- **12:30 PM** — Meet Stcavish · Italian beef sandwich (lunch)
+- **1:30 PM** — Millennium Park — Cloud Gate · 201 E Randolph St *(after lunch)*
 - **5:00 PM** — Depart for Rate Field · 333 W 35th St
 - **5:30 PM** — Scout Seats club (VIP) — all-inclusive food & drink opens ~90 min before first pitch; arrive early for the perks
 - **6:40 PM** — Dodgers @ White Sox, Rate Field · 333 W 35th St *(first pitch 6:40 PM confirmed)*
+- **8:45 PM** — Leave the game to join Stcavish
 
 ### Sat · 6/13
 
 - **11:30 AM** — [Au Cheval](https://auchevalchicago.com/) · 800 W Randolph St — bone marrow + cheeseburger (queue by 10:30 AM, Saturday lines fill fast)
-- **1:30 PM** — [Andersonville Midsommarfest](https://www.starevents.com/event/andersonville-midsommarfest/) · N Clark St (Foster–Catalpa) (~25 min north; brief visit, no need to commit a full afternoon)
-- `?` — open late afternoon
-- **4:30 PM** — Hotel · prepare *(business attire / cocktail — Media Awards is not black-tie)*
-- **7:00 PM** — [James Beard Media Awards](https://www.jamesbeard.org/awards) · Art Institute of Chicago, 111 S Michigan Ave
+- **1:00 PM** — [Andersonville Midsommarfest](https://www.starevents.com/event/andersonville-midsommarfest/) · N Clark St (Foster–Catalpa) (~25 min north; brief visit, no need to commit a full afternoon)
+- **3:00 PM** — Back to the hotel · prepare for the event *(business attire / cocktail — not black-tie)*
+- **4:45 PM** — Ready to leave for the Awards
+- **5:00 PM** — [James Beard Media Awards](https://www.jamesbeard.org/awards) · Art Institute of Chicago, 111 S Michigan Ave *(5:00–9:00 PM)*
 
 ### Sun · 6/14 — *Chicago → New York*
 
 - **10:30 AM** — The Allis (Soho House Chicago) · 113 N Green St — brunch
 - **12:00 PM** — Goose Island Taproom · 1800 W Fulton St
 - **1:00 PM** — Back to hotel
-- **1:30 PM** — Car to ORD
+- **1:30 PM** — Blacklane to ORD
 - **4:00 PM** — United UA2124, ORD → LGA
 - **7:22 PM** — Arrive LGA · taxi to Thompson Central Park
 
@@ -99,7 +101,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **12:00 PM** — Brunch / head downtown
 - **1:00 PM** — [9/11 Memorial & Museum](https://www.911memorial.org/visit) · 180 Greenwich St (FiDi) — `[ ] timed entry QR code` · *allow ~1.5–2 hrs*
 - **3:30 PM** — Tibi + Theory · 120 Wooster St, SoHo
-- **5:30 PM** — [Via Carota](https://www.viacarota.com/) · 51 Grove St (West Village) — `[ ] reserve / confirm walk-in`
+- **5:30 PM** — [Via Carota](https://www.viacarota.com/) · 51 Grove St (West Village) *(TBD)* — `[ ] reserve / confirm walk-in`
 - **7:00 PM** — *MJ the Musical*, Neil Simon Theatre · 250 W 52nd St
 
 ### Wed · 6/17 — *"Midtown day": Ballet Arts (56th) → MoMA → SUMMIT → Midtown shows (no downtown detour)*
@@ -118,7 +120,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **11:00 AM** — Art Smart art & architecture tour with Christian (High Line + Hudson Yards + galleries, 3 hrs)
 - **2:00 PM** — Lunch in Chelsea
 - **3:00 PM** — `?`
-- **5:30 PM** — Head to EWR
+- **6:00 PM** — Blacklane pickup → EWR
 - **8:47 PM** — United UA1626, EWR → SAN · arrive **11:40 PM**
 
 ---
@@ -128,8 +130,8 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 ### Fri · 6/19
 
 - **9:00 AM–1:00 PM** — Another Side of San Diego · 4-hour tour
-- `?` — afternoon — open (food tour / beach / rest)
-- **5:00 PM** — `?` food tour / beach
+- **2:00 PM** — Meet Dr. Cathy *(~4:30 PM)*
+- **6:00 PM** — Meet Jon — chill
 
 ### Sat · 6/20
 
@@ -170,7 +172,7 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - **5:30 PM** — K-town dinner · Park's BBQ · 955 S Vermont Ave, Ste G
 - **7:30 PM** — Arrive Wi Spa · 2700 Wilshire Blvd, K-town *(open 24h; ~5 min from Park's)*
 - **8:00 PM** — 1-hour massage (reserved) — then hot/cold pools + sauna
-- **9:30 PM** — Depart Wi Spa for LAX *(direct K-town → LAX, ~25 min; ~45 min if traffic. Luggage already in car; EVA counters close 11:15 PM.)*
+- **9:30 PM** — Blacklane: depart Wi Spa for LAX *(book after the first Blacklane ride; K-town → LAX ~25 min, ~45 if traffic. Luggage in car; EVA counters close 11:15 PM.)*
 
 *Getty Villa replaces the Eames House (no self-guided slot was available on these dates). At 1:30 PM it's a full ~2 hrs with comfortable buffer to Beverly Hills (~4:00) and Park's (5:30) — a clean west→east finish; reserve the free timed entry. The morning is a Water Grill lunch on Ocean Ave before the short drive up to Getty. The evening stays in K-town: dinner at Park's, then Wi Spa with an 8 PM one-hour massage — leave by ~9:30 PM (10:00 PM at the latest, counters close 11:15 PM).*
 
@@ -210,7 +212,8 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 - [ ] MJ the Musical, Neil Simon Theatre · 6/16 7 PM
 - [ ] Masquerade show tickets · 6/17 7:30 PM
 - [ ] Paris Bar reservation · 6/17 6:45 PM
-- [ ] James Beard Media Awards · 6/13 7 PM
+- [ ] James Beard Media Awards · 6/13 5:00–9:00 PM
+- [ ] Blacklane transfers — book (6/10 ORD→hotel, 6/14 →ORD, 6/18 →EWR, 6/22 Wi Spa→LAX)
 - [ ] Andaz San Diego · 6/20 (1 night)
 - [ ] KSON Countryfest tickets · 6/20 7 PM — committed, awaiting tickets
 - [ ] NASCAR tickets · 6/20 — committed, awaiting tickets (confirm session time)
@@ -221,11 +224,11 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 **Tier 2 — within 1–2 weeks:**
 - [ ] Architecture boat tour · 6/11 10 AM
 - [ ] 360 Chicago timed entry · 6/11 7:30 PM
-- [ ] Chicago Cut Steakhouse · 6/11 5 PM
-- [ ] Wildberry Café · 6/11 noon (walk-in usually fine on Thursday)
-- [ ] Little Goat Diner (lunch) · 6/12 1 PM · 820 W Randolph St
+- [ ] 6/11 dinner · TBD
+- [ ] 6/11 brunch · TBD
+- [ ] Italian beef w/ Stcavish · 6/12 12:30 (lunch)
 - [ ] White Sox vs. Dodgers — Scout Seats VIP · 6/12 (arrive ~5:30 for all-inclusive perks)
-- [ ] Via Carota · 6/16 5:30 PM
+- [ ] Via Carota · 6/16 5:30 PM (TBD)
 - [ ] Art Smart tour with Christian · 6/18 11 AM
 - [ ] Another Side of San Diego · 6/19 9 AM
 - [ ] Park's BBQ · 6/22 5:30 PM
@@ -233,4 +236,4 @@ Wed 6/10 (depart TPE) – Wed 6/24 (arrive TPE)
 **Day-of decisions:**
 - [ ] 6/13 late afternoon `?` slot
 - [ ] 6/18 3 PM `?` slot
-- [ ] 6/19 5 PM `?` food tour / beach
+- [ ] 6/19 — Dr. Cathy 2 PM, Jon 6 PM (confirm)
